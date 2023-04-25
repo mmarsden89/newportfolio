@@ -1,0 +1,558 @@
+$brown: #72554a;
+$lt-brown: #d8b0a4;
+$black: #343440;
+$orange: #bf634d;
+$yellow: #f39d4a;
+
+.designer-container {
+    text-align: left;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 98;
+    left: 0;
+    transition: 1s;
+
+    // grid-template-columns: repeat(1, 12);
+    display: grid;
+    grid-template-rows: repeat(10, 10vw);
+    box-sizing: border-box;
+
+    div {
+        display: grid;
+        grid-template-columns: repeat(10, 10vw);
+        height: 10vw;
+
+        div {
+            height: 10vw;
+            overflow: hidden;
+            position: relative;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                height: 10vw;
+                width: 10vw;
+            }
+        }
+    }
+
+    div:nth-child(1),
+    div:nth-child(7) {
+        div:nth-child(1) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $lt-brown;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(2) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(3) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $brown;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(4) {
+            &::before {
+                background: $lt-brown;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(5) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $black;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(6) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $lt-brown;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(7) {
+            height: 10vw;
+            overflow: hidden !important;
+            position: relative;
+            // left: -50%;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                height: 10vw;
+                width: 10vw;
+            }
+
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $lt-brown;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(8) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $black;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(9) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(10) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+    }
+    div:nth-child(2),
+    div:nth-child(10) {
+        div:nth-child(1) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(2) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(180deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(3) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $black;
+                transform: rotate(180deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(4) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(5) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $brown;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(6) {
+            &::before {
+                background: $yellow;
+            }
+
+            &::after {
+                background: $black;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(7) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(8) {
+            &::before {
+                background: $brown;
+            }
+        }
+        div:nth-child(9) {
+            &::before {
+                background: $lt-brown;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(10) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+    }
+    div:nth-child(3),
+    div:nth-child(6) {
+        div:nth-child(1) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(2) {
+            &::before {
+                background: $lt-brown;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(3) {
+            &::before {
+                background: $lt-brown;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(4) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $lt-brown;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(5) {
+            &::before {
+                background: $lt-brown;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(180deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(6) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(180deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(7) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(180deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(8) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $black;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(9) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $black;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(10) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $brown;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+    }
+    div:nth-child(4),
+    div:nth-child(9) {
+        div:nth-child(1) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $black;
+                transform: rotate(180deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(2) {
+            &::before {
+                background: $lt-brown;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(3) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $brown;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(4) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $black;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(5) {
+            &::before {
+                background: $yellow;
+            }
+
+            &::after {
+                background: $brown;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(6) {
+            &::before {
+                background: $yellow;
+            }
+
+            &::after {
+                background: $brown;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(7) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(8) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(9) {
+            &::before {
+                background: $yellow;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(10) {
+            &::before {
+                background: $orange;
+            }
+        }
+    }
+    div:nth-child(5),
+    div:nth-child(8) {
+        div:nth-child(1) {
+            &::before {
+                background: $lt-brown;
+            }
+
+            &::after {
+                background: $brown;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(2) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(315deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(3) {
+            &::before {
+                background: $orange;
+            }
+
+            &::after {
+                background: $black;
+                transform: rotate(45deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(4) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $yellow;
+                transform: rotate(315deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(5) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $lt-brown;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(6) {
+            &::before {
+                background: $black;
+            }
+
+            &::after {
+                background: $lt-brown;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(7) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $black;
+                transform: rotate(180deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(8) {
+            &::before {
+                background: $yellow;
+            }
+
+            &::after {
+                background: $orange;
+                transform: rotate(90deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(9) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $lt-brown;
+                transform: rotate(135deg) translateX(50%) scaleY(1.5);
+            }
+        }
+        div:nth-child(10) {
+            &::before {
+                background: $brown;
+            }
+
+            &::after {
+                background: $lt-brown;
+                transform: rotate(225deg) translateX(50%) scaleY(1.5);
+            }
+        }
+    }
+}

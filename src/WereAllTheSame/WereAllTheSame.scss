@@ -1,0 +1,349 @@
+$background: #608a5e;
+$white: #eaf4de;
+$black: #1b1e23;
+
+.parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+}
+.container,
+.container2,
+.container3,
+.container4 {
+    transform-origin: bottom center;
+    animation: weight 0.5s ease-in-out alternate infinite;
+
+    .panda {
+        animation: panda 0.25s ease-in-out alternate infinite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-body,
+        &-head {
+            position: relative;
+            background: $white;
+            height: 50px;
+            width: 60px;
+            border-radius: 35px 35px 25px 25px / 30px 30px 15px 15px;
+        }
+
+        &-contain {
+            transform-origin: bottom center;
+            animation: tilt 0.5s ease-in-out alternate infinite;
+        }
+
+        &-body {
+            z-index: -1;
+            border-top: 10px solid $black;
+            border-bottom: 5px solid $black;
+            transform: translateY(-5px);
+            animation: breathe 0.55s ease-in-out infinite alternate;
+            transform-origin: center bottom;
+            height: 40px;
+            width: 48px;
+        }
+
+        &-head {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(5px);
+            // border: 2px solid $black;
+        }
+        &-eyes {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-evenly;
+            animation: eyes 3s ease-in-out infinite alternate;
+
+            &::before,
+            &::after {
+                content: "";
+                height: 7px;
+                width: 7px;
+                border: 5px solid $black;
+                background: #9fb7dd;
+                transform: translateY(2px);
+                border-radius: 5px;
+            }
+            &::before {
+                border-radius: 12px 8px 8px 8px / 12px 8px 8px 8px;
+            }
+            &::after {
+                border-radius: 8px 12px 8px 8px / 8px 12px 8px 8px;
+            }
+        }
+        &-nose {
+            width: 30px;
+            height: 20px;
+            background: $white;
+            border: 1px solid $black;
+            border-radius: 16px;
+            // transform: scale(1, 0.5);
+            animation: nose 3s ease-in-out alternate infinite;
+            position: absolute;
+            top: 55%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &::before {
+                content: "";
+                width: 8px;
+                height: 5px;
+                background: $black;
+                border-radius: 10px 10px 5px 5px;
+            }
+            &::after {
+                content: "";
+                width: 3px;
+                height: 10px;
+                background: $black;
+            }
+        }
+        &-ears {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: -1;
+            top: 25px;
+
+            &::before,
+            &::after {
+                content: "";
+                height: 15px;
+                width: 15px;
+                border: 6px solid $black;
+                background: #543535;
+                border-radius: 43%;
+            }
+        }
+
+        &-arms {
+            position: relative;
+
+            &::before,
+            &::after {
+                z-index: -1;
+                content: "";
+                position: absolute;
+                width: 40px;
+                height: 18px;
+                background: $black;
+                border-radius: 5px;
+            }
+            &::before {
+                // left: 35px;
+                transform-origin: left center;
+                animation: wave 0.5s ease-in-out alternate infinite;
+            }
+            &::after {
+                right: 0px;
+                transform-origin: right center;
+                animation: wave 0.5s ease-in-out alternate-reverse infinite;
+            }
+        }
+        &-legs {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            bottom: 20px;
+
+            &::before,
+            &::after {
+                position: absolute;
+                z-index: -2;
+                content: "";
+                height: 40px;
+                width: 18px;
+                background-color: $black;
+                border-radius: 5px;
+            }
+
+            &::before {
+                left: 5px;
+                animation: run 0.5s ease-in-out alternate infinite;
+            }
+            &::after {
+                right: 5px;
+                animation: run 0.5s ease-in-out alternate-reverse infinite;
+            }
+        }
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: rotateZ(15deg);
+    }
+    100% {
+        transform: rotateZ(-15deg);
+    }
+}
+
+@keyframes run {
+    0% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: scale(0.95, 1.15) translateY(-8px);
+        filter: brightness(75%);
+    }
+}
+
+@keyframes weight {
+    0% {
+        transform: rotateZ(-1.5deg);
+    }
+    100% {
+        transform: rotateZ(1.5deg);
+    }
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1, 0.95);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes panda {
+    0% {
+        transform: scale(1) translateY(0px);
+    }
+    100% {
+        //     adjust y for height of jump
+        transform: scale(1) translateY(15px);
+    }
+}
+
+@keyframes nose {
+    0% {
+        transform: translateX(-2px);
+    }
+    100% {
+        transform: translateX(2px);
+    }
+}
+
+@keyframes eyes {
+    0% {
+        transform: translateX(-1px);
+    }
+    100% {
+        transform: translateX(1px);
+    }
+}
+
+@keyframes tilt {
+    0% {
+        transform: rotateZ(-5deg);
+    }
+    100% {
+        transform: rotateZ(5deg);
+    }
+}
+
+.container2 {
+    .panda {
+        &-body {
+            background: #282828;
+            border-color: $black;
+        }
+        &-head {
+            background: $black;
+        }
+        &-ears::before,
+        &-ears::after,
+        &-eyes::before,
+        &-eyes::after {
+            border-color: $black;
+        }
+        &-eyes::before,
+        &-eyes::after {
+            background: $white;
+        }
+        &-nose {
+            background: #282828;
+        }
+        &-arms::before,
+        &-arms::after,
+        &-legs::before,
+        &-legs::after {
+            background: $black;
+        }
+    }
+}
+
+.container3 {
+    .panda {
+        &-body {
+            background: #a0522d;
+            border-color: #8b4513;
+        }
+        &-head {
+            background: #8b4513;
+        }
+        &-ears::before,
+        &-ears::after,
+        &-eyes::before,
+        &-eyes::after {
+            border-color: #8b4513;
+        }
+        &-eyes::before,
+        &-eyes::after {
+            background: #3c1414;
+        }
+        &-nose {
+            background: #a0522d;
+        }
+        &-arms::before,
+        &-arms::after,
+        &-legs::before,
+        &-legs::after {
+            background: #8b4513;
+        }
+    }
+}
+
+.container4 {
+    .panda {
+        &-body {
+            background: $white;
+            border-color: $white;
+        }
+        &-head {
+            background: $white;
+        }
+        &-ears::before,
+        &-ears::after,
+        &-eyes::before,
+        &-eyes::after {
+            border-color: $white;
+        }
+        &-eyes::before,
+        &-eyes::after {
+            background: $black;
+        }
+        &-nose {
+            background: $white;
+        }
+        &-arms::before,
+        &-arms::after,
+        &-legs::before,
+        &-legs::after {
+            background: $white;
+        }
+    }
+}

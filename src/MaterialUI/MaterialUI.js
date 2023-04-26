@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./MateriualUI.scss";
 import horse from "../Assets/Images/horse1.png";
 import sass from "../Assets/Images/sass.png";
+import axios from "axios";
+import apiUrl from "../ApiConfig";
 
 const MaterialUI = (props) => {
     const { className } = props;
+    const [weather, setWeather] = useState({});
+
+    const getWeather = async () => {
+        const getWeather = await axios(apiUrl);
+        setWeather(getWeather.data);
+        console.log(getWeather);
+    };
+
+    useEffect(() => {
+        getWeather();
+    }, []);
 
     return (
         <div className={`material-container ${className}`}>
@@ -25,7 +38,34 @@ const MaterialUI = (props) => {
                 </div>
             </div>
             <div className="icon-container">
-                <div className="icon"></div>
+                <div className="icon weather-container">
+                    <div className="weather-subcontainer">
+                        <div>
+                            <img
+                                src={
+                                    (weather.current &&
+                                        weather.current.condition.icon) ||
+                                    null
+                                }
+                            />
+                            <p>
+                                {weather.current &&
+                                    weather.current.condition.text}
+                            </p>
+                        </div>
+                        <div className="condition-container">
+                            <p>
+                                {weather.location && weather.location.name}, MA
+                            </p>
+                            <p>{weather.current && weather.current.temp_f}°F</p>
+                            <p>
+                                {weather.current && weather.current.feelslike_f}
+                                °F
+                            </p>
+                        </div>
+                    </div>
+                    <p>API Integration</p>
+                </div>
                 <div className="blank-area"></div>
                 <div className="icon"></div>
             </div>

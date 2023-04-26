@@ -14,8 +14,54 @@ $foreground: #1e0005;
         z-index: 11;
         position: absolute;
         top: 65%;
-        width: 150px;
-        left: calc(50% - 75px);
+        width: 200px;
+        left: calc(50% - 100px);
+
+        background: none;
+        border: 2px solid;
+        border-bottom-width: 4px;
+        font: inherit;
+        letter-spacing: inherit;
+        margin: 1em;
+        padding: 1em 2em;
+        text-transform: inherit;
+        transition: color 1s;
+        // color: #eea163;
+        mix-blend-mode: color-dodge;
+
+        &:hover {
+            animation: zigzag 1s linear infinite;
+            background: linear-gradient(
+                        135deg,
+                        rgba(#eea163, 0.25) 0.25em,
+                        transparent 0.25em
+                    ) -0.5em 0,
+                linear-gradient(
+                        225deg,
+                        rgba(#eea163, 0.25) 0.25em,
+                        transparent 0.25em
+                    ) -0.5em 0,
+                linear-gradient(
+                        315deg,
+                        rgba(#eea163, 0.25) 0.25em,
+                        transparent 0.25em
+                    )
+                    0 0,
+                linear-gradient(
+                        45deg,
+                        rgba(#eea163, 0.25) 0.25em,
+                        transparent 0.25em
+                    )
+                    0 0;
+            background-size: 0.75em 0.75em;
+            color: adjust-hue(#eea163, 180);
+        }
+
+        @keyframes zigzag {
+            100% {
+                background-position: 1em 0, 1em 0, -0.75em 0, -0.75em 0;
+            }
+        }
     }
 
     .stars-container {

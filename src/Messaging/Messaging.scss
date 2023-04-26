@@ -1,5 +1,5 @@
 .messaging-container {
-    .navigation-container {
+    .wayfinder-container {
         // position: absolute;
         // width: 100vw;
         // top: 0;
@@ -27,10 +27,10 @@
     .messaging {
         z-index: 11;
         position: absolute;
-        width: 100vw;
-        height: 50%;
-        top: 25%;
-        left: 0;
+        width: 50vw;
+        height: 25%;
+        top: 38%;
+        left: 25%;
         display: flex;
         justify-content: center;
         align-items: center;

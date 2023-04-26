@@ -40,6 +40,61 @@ $blue: #1e4976;
         flex-wrap: nowrap;
         height: 200px;
 
+        .weather-container {
+            transition: 1s;
+            display: flex;
+
+            .weather-subcontainer {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-evenly;
+                text-align: right;
+                div:first-child {
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto 0;
+                    align-items: center;
+                    img {
+                        width: 64px;
+                        height: 64px;
+                    }
+                    p {
+                        margin: 0;
+                    }
+                    transform: translateX(85%);
+                    transition: 1s;
+                }
+
+                div:nth-child(2) {
+                    opacity: 0;
+                    transition: 1s;
+                    transition-delay: 1s;
+                }
+
+                .condition-container {
+                    display: flex;
+                    flex-direction: column;
+                    // justify-content: space-evenly;
+                    p {
+                        margin: 5px;
+                    }
+                }
+            }
+            &:hover {
+                div:first-child {
+                    transform: translateX(-0%);
+                    transition: 1s;
+                    // transition-delay: 1s;
+                }
+
+                div:nth-child(2) {
+                    transition-delay: 0;
+                    opacity: 1;
+                }
+            }
+        }
+
         .a-b-container {
             .a-b {
                 position: relative;

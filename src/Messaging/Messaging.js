@@ -4,17 +4,17 @@ import "./Messaging.scss";
 const Messaging = (props) => {
     const { handlePreviousSlide, handleNextSlide, currentSlide } = props;
     const slideOne = [
-        "a creative developer who loves to develop",
-        "aesthetic solutions that captivates users",
+        "a creative developer who loves to build",
+        "aesthetic solutions that captivate users",
     ];
 
     const slideTwo = [
         "a creative designer who loves to develop",
-        "aesthetic solutions that captivates users",
+        "aesthetic solutions that captivate users",
     ];
 
     const slideThree = [
-        "an inquisitive developer who loves to explore",
+        "a curious developer who loves to explore",
         "new solutions that benefits users",
     ];
 
@@ -23,7 +23,10 @@ const Messaging = (props) => {
         "fun animations that captivates users",
     ];
 
-    const slideFive = ["and I want to work with you"];
+    const slideFive = [
+        "and I want to work with you",
+        "----------------------------",
+    ];
 
     const differentSlides = [
         slideOne,
@@ -41,10 +44,10 @@ const Messaging = (props) => {
                 </h1>
                 <div className="sub-header">
                     <h2>{differentSlides[currentSlide][0]}</h2>
-                    <h2>{differentSlides[currentSlide][1] || ""}</h2>
+                    <h2>{differentSlides[currentSlide][1] || " "}</h2>
                 </div>
             </div>
-            <div className="navigation-container">
+            <div className="wayfinder-container">
                 {currentSlide > 0 && (
                     <div onClick={handlePreviousSlide} className="left">
                         &lsaquo;

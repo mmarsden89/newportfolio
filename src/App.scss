@@ -1,4 +1,4 @@
-$bgcolor: #6223d2;
+$bgcolor: #001e3c;
 
 .App {
     text-align: center;
@@ -9,7 +9,7 @@ $bgcolor: #6223d2;
     // --ggs: 6;
     position: relative;
 
-    background: #0b1929;
+    background: $bgcolor;
 
     overflow: hidden !important;
     display: flex;

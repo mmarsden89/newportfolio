@@ -2,10 +2,12 @@ import React from "react";
 import "./Designer.scss";
 
 const Designer = (props) => {
-    const { className } = props;
-    console.log("props-->", className);
+    const { className, style } = props;
     return (
-        <div className={`designer-container ${className}`}>
+        <div
+            className={`designer-container ${className}`}
+            style={{ filter: `hue-rotate(${style}deg)` }}
+        >
             <div>
                 <div></div>
                 <div></div>

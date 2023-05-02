@@ -24,12 +24,15 @@ const Navigation = (props) => {
         <div className="navigation-container">
             <div className="navigation-subcontainer">
                 <div onClick={handleHome}>home</div>
-                {!colorRange && currentSlide < 2 && (
+                <div className="resume">resume</div>
+                {!colorRange && currentSlide < 2 ? (
                     <img
                         src={colorwheelicon}
                         className="colorwheel"
                         onClick={handleColorRange}
                     />
+                ) : (
+                    <div className="colorwheel"></div>
                 )}
                 {colorRange && (
                     <div className="popup">

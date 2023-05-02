@@ -46,6 +46,23 @@
             input {
                 width: 75px !important;
             }
+
+            // input[type="range"]:focus {
+            //     background: pink;
+            // }
+            // input[type="range"]::-webkit-slider-thumb {
+            //     -webkit-appearance: none;
+            //     height: 15px;
+            //     width: 15px;
+            //     background: pink;
+            //     // margin-top: -5px;
+            //     border-radius: 50%;
+            // }
+
+            // input[type="range"]::-webkit-slider-runnable-track {
+            //     background: tomato;
+            //     // height: 5px;
+            // }
         }
     }
 }

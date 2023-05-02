@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./MateriualUI.scss";
-import horse from "../Assets/Images/horse1.png";
 import sass from "../Assets/Images/sass.png";
 import axios from "axios";
 import apiUrl from "../ApiConfig";
@@ -10,9 +9,9 @@ const MaterialUI = (props) => {
     const [weather, setWeather] = useState({});
 
     const getWeather = async () => {
-        const getWeather = await axios(apiUrl);
+        const getWeather = await axios(`${apiUrl}/weather`);
         setWeather(getWeather.data);
-        console.log(getWeather);
+        // console.log(getWeather);
     };
 
     useEffect(() => {
@@ -36,8 +35,6 @@ const MaterialUI = (props) => {
                     </div>
                     <p>SCSS</p>
                 </div>
-            </div>
-            <div className="icon-container">
                 <div className="icon weather-container">
                     <div className="weather-subcontainer">
                         <div>
@@ -67,9 +64,16 @@ const MaterialUI = (props) => {
                     <p>API Integration</p>
                 </div>
                 <div className="blank-area"></div>
-                <div className="icon"></div>
-            </div>
-            <div className="icon-container">
+                <div className="icon react-container">
+                    <div className="react">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <p>React</p>
+                </div>
+
                 <div className="icon">
                     <p className="x">|</p>
                     <p>Animation</p>
@@ -88,7 +92,10 @@ const MaterialUI = (props) => {
                     <p>Design</p>
                 </div>
                 <div className="icon a-b-container">
-                    <div className="a-b"></div>
+                    <div className="a-b-animation-container">
+                        <div className="a-b"></div>
+                        <div className="a-b"></div>
+                    </div>
                     <p>A/B Testing</p>
                 </div>
             </div>

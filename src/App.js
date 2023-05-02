@@ -10,6 +10,8 @@ import Sunset from "./Sunset/Sunset";
 import WorkForYou from "./WorkForYou/WorkForYou";
 import Messaging from "./Messaging/Messaging";
 import Navigation from "./Navigation/Navigation";
+import DroppableSlide from "./DroppableSlide/DroppableSlide";
+import DragAndDrop from "./DragAndDrop/DragAndDrop";
 
 function App() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -57,9 +59,11 @@ function App() {
             {/* <WereAllTheSame /> */}
             <WorkForYou />
             <Sunset className={classArr[3]} />
-            <MaterialUI className={classArr[2]} />
+            {/* <MaterialUI className={classArr[2]} /> */}
+            <DragAndDrop className={classArr[2]} />
             <Designer className={classArr[1]} style={value} />
             <Welcome className={classArr[0]} style={value} />
+            {/* <DroppableSlide className={classArr[0]} style={value} /> */}
             <Messaging
                 currentSlide={currentSlide}
                 handleNextSlide={handleNextSlide}
@@ -68,7 +72,7 @@ function App() {
             {/* {slideArr[slideIdx]} */}
             {/* <Sunset /> */}
             {/* <MaterialUI /> */}
-            <div className="message-container"></div>
+            {/* <div className="message-container"></div> */}
             <Navigation
                 currentSlide={currentSlide}
                 setCurrentSlide={setCurrentSlide}

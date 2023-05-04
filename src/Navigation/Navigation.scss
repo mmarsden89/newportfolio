@@ -26,15 +26,19 @@
     }
 
     .navigation-subcontainer {
-        width: 15%;
+        width: 350px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-right: 100px;
+        margin-right: 50px;
         .colorwheel {
             // filter: brightness(100);
             width: 25px;
+        }
+
+        .nav-link {
+            width: 100px;
         }
         .popup {
             display: flex;
@@ -46,23 +50,6 @@
             input {
                 width: 75px !important;
             }
-
-            // input[type="range"]:focus {
-            //     background: pink;
-            // }
-            // input[type="range"]::-webkit-slider-thumb {
-            //     -webkit-appearance: none;
-            //     height: 15px;
-            //     width: 15px;
-            //     background: pink;
-            //     // margin-top: -5px;
-            //     border-radius: 50%;
-            // }
-
-            // input[type="range"]::-webkit-slider-runnable-track {
-            //     background: tomato;
-            //     // height: 5px;
-            // }
         }
     }
 }

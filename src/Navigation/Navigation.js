@@ -23,19 +23,21 @@ const Navigation = (props) => {
     return (
         <div className="navigation-container">
             <div className="navigation-subcontainer">
-                <div onClick={handleHome}>home</div>
-                <div className="resume">resume</div>
-                {!colorRange && currentSlide < 2 ? (
-                    <img
-                        src={colorwheelicon}
-                        className="colorwheel"
-                        onClick={handleColorRange}
-                    />
-                ) : (
-                    <div className="colorwheel"></div>
+                <div onClick={handleHome} className="nav-link">
+                    home
+                </div>
+                <div className="resume nav-link">resume</div>
+                {!colorRange && currentSlide < 2 && (
+                    <div className="nav-link">
+                        <img
+                            src={colorwheelicon}
+                            className="colorwheel"
+                            onClick={handleColorRange}
+                        />
+                    </div>
                 )}
                 {colorRange && (
-                    <div className="popup">
+                    <div className="popup nav-link">
                         <input
                             type="range"
                             min="0"

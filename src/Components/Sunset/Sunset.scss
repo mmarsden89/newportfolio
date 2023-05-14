@@ -1,0 +1,122 @@
+$foreground: #1e0005;
+
+.sunset-container {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    background-color: #2a0539;
+    z-index: 96;
+    transition: 1s;
+    left: 0;
+
+    .stars-container {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+
+        .star {
+            height: 1px;
+            width: 1px;
+            background-color: rgb(161, 161, 117);
+            position: absolute;
+            animation: starshine 2s linear infinite;
+        }
+
+        @keyframes starshine {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+
+    .sunset {
+        background: linear-gradient(
+            #f99061 0%,
+            skyblue 25%,
+            #2a0539 50%,
+            #f99061 75%,
+            skyblue 100%
+        );
+        height: 5000%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        transform: translateY(-75%);
+        filter: blur(25%);
+
+        animation: 60s sunset linear infinite;
+    }
+
+    @keyframes sunset {
+        from {
+            transform: translateY(-75%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    .sun-container {
+        height: 100%;
+        width: 75%;
+        position: relative;
+        top: 50%;
+        margin: 0 auto;
+
+        animation: 60s revolve linear infinite;
+
+        .sun {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background: rgb(255, 179, 0);
+            opacity: 0.9;
+        }
+
+        @keyframes revolve {
+            0% {
+                transform: rotate(120deg);
+            }
+            30% {
+                transform: rotate(180deg);
+            }
+            32% {
+                transform: rotate(300deg);
+            }
+            100% {
+                transform: rotate(480deg);
+            }
+        }
+    }
+
+    .foreground-container {
+        .bg-image {
+            z-index: 25;
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            left: 0;
+            animation: 60s colorMountains linear infinite;
+        }
+
+        @keyframes colorMountains {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            50% {
+                filter: hue-rotate(250deg);
+            }
+            100% {
+                filter: hue-rotate(0deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+.day {
+    color: black;
+}
+
+.night {
+    color: white;
+}
+.messaging-container {
+    .wayfinder-container {
+        z-index: 100;
+
+        div {
+            font-size: 150px;
+            position: absolute;
+            top: calc(50% - 100px);
+            cursor: pointer;
+            z-index: 100;
+        }
+        .right,
+        .left {
+            transition: 0.5s;
+            &:hover {
+                opacity: 0.7;
+                transform: scale(0.97);
+            }
+            &:active {
+                opacity: 0.5;
+                transform: scale(0.9);
+            }
+        }
+
+        .left {
+            left: 0;
+        }
+        .right {
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    .messaging {
+        z-index: 11;
+        position: absolute;
+        width: 50vw;
+        height: 25%;
+        top: 37%;
+        left: 25%;
+        display: flex;
+
+        align-items: center;
+        flex-direction: column;
+        z-index: 100;
+
+        cursor: default;
+        h1 {
+            font-size: 100px;
+            font-family: Augillion;
+            font-weight: 500;
+            margin: 0;
+            // position: absolute;
+            // top: 40%;
+            // left: 35%;
+            animation: 0.25s onload linear;
+            white-space: nowrap;
+
+            span {
+                mix-blend-mode: soft-light;
+            }
+        }
+        .sub-header {
+            text-align: left;
+            h2 {
+                margin: 0;
+                white-space: nowrap;
+            }
+        }
+
+        .active {
+            animation: 0.25s onload linear;
+        }
+
+        @keyframes onload {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+    .contact {
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        bottom: 32%;
+        left: 30%;
+        height: 50px;
+        img {
+            height: 50px;
+            width: 50px;
+            transition: 0.5s;
+            cursor: pointer;
+            &:nth-child(2) {
+                height: 40px;
+                width: 45px;
+            }
+
+            &:hover {
+                transform: scale(0.97);
+                opacity: 0.6;
+                mix-blend-mode: multiply;
+            }
+
+            &:active {
+                opacity: 0.3;
+                transform: scale(0.9);
+            }
+        }
+    }
+}

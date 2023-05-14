@@ -1,29 +1,28 @@
 import "./App.scss";
 import React, { useState, useEffect } from "react";
-import Triangle from "./Triangles/Triangles.js";
-import Aframe from "./A-frame/AFrame.js";
-import Welcome from "./Welcome/Welcome.js";
-import Designer from "./Designer/Designer.js";
-import WereAllTheSame from "./WereAllTheSame/WereAllTheSame.js";
-import MaterialUI from "./MaterialUI/MaterialUI";
-import Sunset from "./Sunset/Sunset";
-import WorkForYou from "./WorkForYou/WorkForYou";
-import Messaging from "./Messaging/Messaging";
-import Navigation from "./Navigation/Navigation";
-import DroppableSlide from "./DroppableSlide/DroppableSlide";
-import DragAndDrop from "./DragAndDrop/DragAndDrop";
+import {
+    Welcome,
+    Designer,
+    Sunset,
+    WorkForYou,
+    Messaging,
+    Navigation,
+    DragAndDrop,
+} from "./Components/_index";
 
 function App() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [classArr, setClassArr] = useState(["", "", "", ""]);
     const [value, setValue] = useState(0);
     const [colorRange, setColorRange] = useState(false);
+    const [zip, setZip] = useState("02144");
+    const [showBalloons, setShowBalloons] = useState(false);
+    const [day, setDay] = useState(false);
 
-    useEffect(() => {
-        console.log("value-->", value);
-    }, [classArr, value]);
+    useEffect(() => {}, [classArr, value, zip, day]);
 
     const handleNextSlide = () => {
+        console.log("current slide", currentSlide);
         if (currentSlide < 4) {
             let copy = classArr;
             copy[currentSlide] = "move-left";
@@ -31,10 +30,15 @@ function App() {
             setClassArr(copy);
             setCurrentSlide(currentSlide + 1);
             setColorRange(false);
+            if (currentSlide + 1 !== 2) {
+                console.log("current slide does not equal 2");
+                setDay(false);
+            }
         }
     };
 
     const handlePreviousSlide = () => {
+        console.log("current slide", currentSlide);
         if (currentSlide > 0) {
             let copy = classArr;
             copy[currentSlide - 1] = "";
@@ -42,6 +46,11 @@ function App() {
             setClassArr(copy);
             setCurrentSlide(currentSlide - 1);
             setColorRange(false);
+
+            if (currentSlide - 1 !== 2) {
+                console.log("current slide does not equal 2");
+                setDay(false);
+            }
         }
     };
 
@@ -50,29 +59,43 @@ function App() {
         setValue(0);
     };
 
+    const handleZipCode = (e) => {
+        e.preventDefault();
+        console.log(e.target.value);
+        setZip(e.target.value);
+    };
+
+    const releaseBallons = () => {
+        setShowBalloons(true);
+        const removeBalloons = () => {
+            setShowBalloons(false);
+        };
+        setTimeout(removeBalloons, 60000);
+    };
+
+    const setTheme = () => {
+        console.log("day", day);
+        setDay(!day);
+    };
+
     return (
         <div className="App">
-            {/* <div className="overlay"> */}
-            {/* <Triangle /> */}
-            {/* <Aframe /> */}
-            {/* </div> */}
-            {/* <WereAllTheSame /> */}
             <WorkForYou />
-            <Sunset className={classArr[3]} />
-            {/* <MaterialUI className={classArr[2]} /> */}
-            <DragAndDrop className={classArr[2]} />
+            <Sunset className={classArr[3]} showBalloons={showBalloons} />
+            <DragAndDrop
+                className={classArr[2]}
+                zip={zip}
+                day={day}
+                setTheme={setTheme}
+            />
             <Designer className={classArr[1]} style={value} />
             <Welcome className={classArr[0]} style={value} />
-            {/* <DroppableSlide className={classArr[0]} style={value} /> */}
             <Messaging
                 currentSlide={currentSlide}
                 handleNextSlide={handleNextSlide}
                 handlePreviousSlide={handlePreviousSlide}
+                day={day}
             />
-            {/* {slideArr[slideIdx]} */}
-            {/* <Sunset /> */}
-            {/* <MaterialUI /> */}
-            {/* <div className="message-container"></div> */}
             <Navigation
                 currentSlide={currentSlide}
                 setCurrentSlide={setCurrentSlide}
@@ -81,6 +104,9 @@ function App() {
                 value={value}
                 handleColorRange={handleColorRange}
                 colorRange={colorRange}
+                handleZipCode={handleZipCode}
+                releaseBallons={releaseBallons}
+                day={day}
             />
         </div>
     );

@@ -16,6 +16,7 @@ $bgcolor: #001e3c;
     align-items: center;
     justify-content: center;
     color: white;
+    user-select: none;
 
     .move-left {
         left: -100vw;

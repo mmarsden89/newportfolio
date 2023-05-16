@@ -87,6 +87,25 @@
             }
         }
     }
+    .codepen {
+        img {
+            width: 150px;
+            filter: grayscale(1) invert(1);
+            transition: 1s;
+
+            &:hover {
+                transform: scale(0.97);
+                opacity: 0.6;
+                mix-blend-mode: multiply;
+            }
+
+            &:active {
+                opacity: 0.3;
+                transform: scale(0.9);
+            }
+        }
+    }
+
     .contact {
         width: 40%;
         display: flex;

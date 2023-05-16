@@ -131,6 +131,7 @@ $ltborder: #d2d2d7;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-evenly;
+                align-items: center;
                 .sunrise,
                 .sunset {
                     display: flex;
@@ -139,7 +140,40 @@ $ltborder: #d2d2d7;
                     justify-content: space-evenly;
                     margin-bottom: 20px;
                 }
+                .sunrise {
+                    margin-left: 10px;
+                }
+
+                .sunset {
+                    margin-right: 10px;
+                }
+
+                .hours-of-daylight {
+                    font-size: 10px;
+                    line-height: 0;
+
+                    pre {
+                        line-height: 1.2em;
+                        background-clip: text;
+                        color: transparent;
+                        background-image: linear-gradient(
+                            60deg,
+                            #350835,
+                            #ffb03a,
+                            #350835
+                        );
+                    }
+                }
             }
+        }
+
+        .weather-subcontainer,
+        .air-quality-container,
+        .wind-direction {
+            margin-top: 30px;
+        }
+        .astro-container {
+            margin-top: 50px;
         }
 
         .weather-container {
@@ -239,7 +273,7 @@ $ltborder: #d2d2d7;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: space-between;
             padding: 15px 10px;
             border-radius: 10px;
             // flex-grow: 1;

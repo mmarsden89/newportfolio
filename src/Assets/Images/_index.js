@@ -11,6 +11,7 @@ import sun from "./sun.webp";
 import night from "./night.webp";
 import wind from "./wind.png";
 import waves from "./waves.svg";
+import codepen from "./codepen.png";
 
 export {
     airquality,
@@ -26,4 +27,5 @@ export {
     night,
     wind,
     waves,
+    codepen,
 };

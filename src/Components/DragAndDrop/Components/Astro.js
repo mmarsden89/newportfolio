@@ -39,12 +39,14 @@ const Astro = (props) => {
                     <img src="http://cdn.weatherapi.com/weather/64x64/day/113.png" />
                     {astro && astro.sunrise}
                 </div>
+                <div className="hours-of-daylight">
+                    {getHours()} hours <pre>••••••••••••••</pre>
+                </div>
                 <div className="sunset">
                     <img src="http://cdn.weatherapi.com/weather/64x64/night/113.png" />
                     {astro && astro.sunset}
                 </div>
             </div>
-            <div>{getHours()} hours of daylight</div>
             <p>Daylight Hours</p>
         </div>
     );

@@ -47,6 +47,12 @@ const Navigation = (props) => {
     const submitZip = (e) => {
         setEditZip(false);
         handleZipCode(e);
+        setNewZip("");
+    };
+
+    const handleCancel = () => {
+        setEditZip(false);
+        setNewZip("");
     };
 
     return (
@@ -101,7 +107,7 @@ const Navigation = (props) => {
                             <button onClick={submitZip} value={zip}>
                                 ✓
                             </button>
-                            <button onClick={() => setEditZip(false)}>✕</button>
+                            <button onClick={handleCancel}>✕</button>
                         </form>
                     </div>
                 )}

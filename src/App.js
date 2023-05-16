@@ -98,6 +98,8 @@ function App() {
                 day={day}
                 setTheme={setTheme}
                 renderMessage={renderMessage}
+                currentslide={currentSlide}
+                setZip={setZip}
             />
             <Designer className={classArr[1]} style={value} />
             <Welcome className={classArr[0]} style={value} />

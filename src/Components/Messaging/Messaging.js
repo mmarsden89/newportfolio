@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import differentSlides from "./Slides";
 import "./Messaging.scss";
-import { email, linkedinicon } from "../../Assets/Images/_index";
+import { email, linkedinicon, codepen } from "../../Assets/Images/_index";
 
 const Messaging = (props) => {
     const {
@@ -35,14 +35,23 @@ const Messaging = (props) => {
                         {differentSlides[currentSlide][1] || " "}
                     </h2>
                 </div>
-                <div className="contact">
-                    {currentSlide === 4 && (
+                {currentSlide === 1 && (
+                    <a
+                        href="https://codepen.io/mmarsden89-the-scripter"
+                        target="_blank"
+                        className="codepen"
+                    >
+                        <img src={codepen} />
+                    </a>
+                )}
+                {currentSlide === 4 && (
+                    <div className="contact">
                         <>
                             <img src={email} autoFocus onClick={handleClick} />
                             <img src={linkedinicon} autofocus />
                         </>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
             <div className="wayfinder-container">
                 {currentSlide > 0 && (

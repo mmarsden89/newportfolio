@@ -73,6 +73,7 @@
 
         .nav-link {
             width: 100px;
+            white-space: nowrap;
 
             input::-webkit-outer-spin-button,
             input::-webkit-inner-spin-button {
@@ -182,6 +183,7 @@
             transition: color 1s;
             // color: #eea163;
             mix-blend-mode: color-dodge;
+            cursor: pointer;
             // transition: 1s;
 
             &:hover {

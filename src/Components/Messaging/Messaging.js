@@ -4,11 +4,22 @@ import "./Messaging.scss";
 import { email, linkedinicon } from "../../Assets/Images/_index";
 
 const Messaging = (props) => {
-    const { handlePreviousSlide, handleNextSlide, currentSlide, day } = props;
+    const {
+        handlePreviousSlide,
+        handleNextSlide,
+        currentSlide,
+        day,
+        renderMessage,
+    } = props;
 
     useEffect(() => {
         console.log("hi hi hi");
     }, [currentSlide, day]);
+
+    const handleClick = () => {
+        navigator.clipboard.writeText("mattmarsdendev@gmail.com");
+        renderMessage("Email copied to clipboard!", true);
+    };
 
     return (
         <div className={`messaging-container ${day ? " day" : " night"}`}>
@@ -20,12 +31,14 @@ const Messaging = (props) => {
                     <h2 key={currentSlide}>
                         {differentSlides[currentSlide][0]}
                     </h2>
-                    <h2>{differentSlides[currentSlide][1] || " "}</h2>
+                    <h2 key={currentSlide + "-two"}>
+                        {differentSlides[currentSlide][1] || " "}
+                    </h2>
                 </div>
                 <div className="contact">
                     {currentSlide === 4 && (
                         <>
-                            <img src={email} autoFocus />
+                            <img src={email} autoFocus onClick={handleClick} />
                             <img src={linkedinicon} autofocus />
                         </>
                     )}

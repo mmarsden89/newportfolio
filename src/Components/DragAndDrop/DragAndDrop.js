@@ -13,17 +13,18 @@ import {
     ContainerComponent,
     Theme,
 } from "./Components/_index.js";
-import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
 const DragAndDrop = (props) => {
-    const { className, zip, setTheme, day } = props;
+    const { className, zip, setTheme, day, renderMessage } = props;
     const [weather, setWeather] = useState({});
     const [hourly, setHourly] = useState([]);
-    const [slides, setSlides] = useState([]);
 
     const getWeather = async () => {
         const getWeather = await axios(`${apiUrl}/weather?zip=${zip}`);
-        if (getWeather.data.error) return;
+        if (getWeather.data.error) {
+            renderMessage("Invalid zipcode. Please try again", false);
+            return;
+        }
         setWeather(getWeather.data);
         let hours = 24;
         let today = getWeather.data.forecast.forecastday[0].hour.filter(
@@ -44,70 +45,21 @@ const DragAndDrop = (props) => {
         console.log(getWeather);
     };
 
-    const weatherSlides = [
-        {
-            id: "current",
-            name: "current weather",
-            html: <Current weather={weather} />,
-        },
-        {
-            id: "forecast",
-            name: "forecast",
-            html: <Forecast weather={weather} />,
-        },
-    ];
     useEffect(() => {
         getWeather();
-        setSlides(weatherSlides);
     }, [zip, className, day]);
-
-    function handleOnDragEnd(result, list) {
-        console.log(list);
-        if (!result.destination) return;
-
-        const items = Array.from(slides);
-        const [reorderedItem] = items.splice(result.source.index, 1);
-        items.splice(result.destination.index, 0, reorderedItem);
-
-        setSlides(items);
-    }
 
     return (
         <ContainerComponent
             weather={weather}
             className={className}
             theme={day ? " day" : " night"}
-            slides={slides}
-            setSlides={setSlides}
         >
             <Theme setTheme={setTheme} day={day} />
             <Hourly hourly={hourly} />
             <CardContainer>
-                <Provider>
-                    <DragDropContext
-                        onDragEnd={(event) => handleOnDragEnd(event, slides)}
-                    >
-                        {slides.map(({ id, name, html }, index) => {
-                            return (
-                                <Draggable
-                                    key={id}
-                                    draggableId={id}
-                                    index={index}
-                                >
-                                    {(provided) => (
-                                        <li
-                                            ref={provided.innerRef}
-                                            {...provided.draggableProps}
-                                            {...provided.dragHandleProps}
-                                        >
-                                            {html}
-                                        </li>
-                                    )}
-                                </Draggable>
-                            );
-                        })}
-                    </DragDropContext>
-                </Provider>
+                <Current />
+                <Forecast />
             </CardContainer>
             <CardContainer>
                 <Wind />

@@ -8,6 +8,7 @@ import {
     Messaging,
     Navigation,
     DragAndDrop,
+    DisplayInfo,
 } from "./Components/_index";
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
     const [zip, setZip] = useState("02144");
     const [showBalloons, setShowBalloons] = useState(false);
     const [day, setDay] = useState(false);
+    const [displayMessage, setDisplayMessage] = useState("");
+    const [showMessage, setShowMessage] = useState(false);
+    const [msgBool, setMsgBool] = useState(true);
 
     useEffect(() => {}, [classArr, value, zip, day]);
 
@@ -61,7 +65,6 @@ function App() {
 
     const handleZipCode = (e) => {
         e.preventDefault();
-        console.log(e.target.value);
         setZip(e.target.value);
     };
 
@@ -78,6 +81,13 @@ function App() {
         setDay(!day);
     };
 
+    const renderMessage = (msg, good) => {
+        setShowMessage(true);
+        setDisplayMessage(msg);
+        setMsgBool(good ? true : false);
+        setTimeout(() => setShowMessage(false), 3000);
+    };
+
     return (
         <div className="App">
             <WorkForYou />
@@ -87,6 +97,7 @@ function App() {
                 zip={zip}
                 day={day}
                 setTheme={setTheme}
+                renderMessage={renderMessage}
             />
             <Designer className={classArr[1]} style={value} />
             <Welcome className={classArr[0]} style={value} />
@@ -95,6 +106,7 @@ function App() {
                 handleNextSlide={handleNextSlide}
                 handlePreviousSlide={handlePreviousSlide}
                 day={day}
+                renderMessage={renderMessage}
             />
             <Navigation
                 currentSlide={currentSlide}
@@ -107,6 +119,12 @@ function App() {
                 handleZipCode={handleZipCode}
                 releaseBallons={releaseBallons}
                 day={day}
+                showBalloons={showBalloons}
+            />
+            <DisplayInfo
+                displayMessage={displayMessage}
+                msgBool={msgBool}
+                showMessage={showMessage}
             />
         </div>
     );

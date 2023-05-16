@@ -39,7 +39,7 @@ const Sunset = (props) => {
                 style={{
                     left: `${Math.random() * 90}vw`,
                     width: `${Math.random() * 100 + 15}px`,
-                    animationDelay: `${Math.random() * 2}s`,
+                    animationDelay: `${Math.random() * 5}s`,
                     position: "absolute",
                     filter: `hue-rotate(${Math.random() * 360}deg)`,
                 }}

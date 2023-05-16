@@ -22,6 +22,7 @@ const Navigation = (props) => {
         handleZipCode,
         releaseBallons,
         day,
+        showBalloons,
     } = props;
 
     useEffect(() => {}, [currentSlide]);
@@ -105,18 +106,21 @@ const Navigation = (props) => {
                     </div>
                 )}
 
-                {currentSlide === 3 && (
-                    <button
-                        className="release-balloons"
-                        onClick={releaseBallons}
-                    >
-                        balloons
-                    </button>
-                )}
+                {currentSlide === 3 &&
+                    (!showBalloons ? (
+                        <button
+                            className="release-balloons"
+                            onClick={releaseBallons}
+                        >
+                            balloons
+                        </button>
+                    ) : (
+                        <div className="nav-link">launched</div>
+                    ))}
 
                 {currentSlide === 4 && (
                     <div className="nav-link social-container">
-                        <a href="#" target="_blank">
+                        <a href="https://github.com/mmarsden89" target="_blank">
                             <img src={githubicon} className="github-icon" />
                         </a>
                         <a href="#" target="_blank">

@@ -5,6 +5,7 @@ import Navigation from "./Navigation/Navigation";
 import Sunset from "./Sunset/Sunset";
 import Welcome from "./Welcome/Welcome";
 import WorkForYou from "./WorkForYou/WorkForYou";
+import DisplayInfo from "./DisplayInfo/DisplayInfo";
 
 export {
     Designer,
@@ -14,4 +15,5 @@ export {
     Sunset,
     Welcome,
     WorkForYou,
+    DisplayInfo,
 };

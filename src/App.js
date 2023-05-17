@@ -122,6 +122,7 @@ function App() {
                 releaseBallons={releaseBallons}
                 day={day}
                 showBalloons={showBalloons}
+                renderMessage={renderMessage}
             />
             <DisplayInfo
                 displayMessage={displayMessage}

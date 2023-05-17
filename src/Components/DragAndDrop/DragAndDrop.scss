@@ -261,6 +261,26 @@ $ltborder: #d2d2d7;
             div {
                 width: 50px;
             }
+
+            .min-max-container {
+                width: 100px;
+                height: 10px;
+                position: relative;
+
+                .min-max-box {
+                    overflow: hidden;
+                    position: absolute;
+                    height: 10px;
+                    width: 100px;
+
+                    .min-max {
+                        height: 3px;
+                        width: 100px;
+                        background: linear-gradient(90deg, #167ed8, #f3bd05);
+                        transform: translateX(-50px);
+                    }
+                }
+            }
         }
 
         .icon {

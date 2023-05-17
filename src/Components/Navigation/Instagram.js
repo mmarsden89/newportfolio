@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { instagram } from "../../Assets/Images/_index";
 
-const Instagram = () => {
+const Instagram = (props) => {
+    const { renderMessage } = props;
     const [igLocation, setIgLocation] = useState([0, 0]);
     const [translate, setTranslate] = useState([0, 0]);
+    const [clicked, setClicked] = useState(0);
 
     function getPosition(element) {
         var rect = element.getBoundingClientRect();
@@ -19,7 +21,6 @@ const Instagram = () => {
         let num = Math.floor(Math.random() * 25) + 10; // this will get a number between 1 and 99;
         num *= Math.round(Math.random()) ? 1 : -1;
         if (axis === "x") {
-            console.log(num + translate[0], window.innerWidth);
             return num + igLocation[0] <= window.innerWidth &&
                 num + igLocation[0] >= 25
                 ? num
@@ -29,6 +30,15 @@ const Instagram = () => {
                 num + igLocation[1] >= 25
                 ? num
                 : getRandom("y");
+        }
+    };
+
+    const handleCounter = () => {
+        console.log("clicked!", clicked);
+        setClicked(clicked + 1);
+        if (clicked === 1) {
+            setClicked(0);
+            renderMessage("Let's stay friends on LinkedIn", true);
         }
     };
 
@@ -49,7 +59,8 @@ const Instagram = () => {
                     transform: `translate(${translate[0]}px, ${translate[1]}px)`,
                 }}
                 onMouseOver={handleClick}
-                onClick={handleClick}
+                onClick={handleCounter}
+                onMouseEnter={handleClick}
             />
         </div>
     );

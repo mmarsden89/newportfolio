@@ -23,6 +23,7 @@ const Navigation = (props) => {
         releaseBallons,
         day,
         showBalloons,
+        renderMessage,
     } = props;
 
     useEffect(() => {}, [currentSlide]);
@@ -132,7 +133,7 @@ const Navigation = (props) => {
                         <a href="#" target="_blank">
                             <img src={linkedinicon} className="github-icon" />
                         </a>
-                        <Instagram />
+                        <Instagram renderMessage={renderMessage} />
                     </div>
                 )}
             </div>

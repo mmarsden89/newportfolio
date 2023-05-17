@@ -12,6 +12,22 @@ const Forecast = (props) => {
                 <div>{days[new Date(item.date).getDay() + 1] || days[0]}</div>
                 <img src={item.day.condition.icon} className="forecast-image" />
                 <div>{Math.round(item.day.mintemp_f)}°F</div>
+                <div className="min-max-container">
+                    <div
+                        className="min-max-box"
+                        style={{
+                            left: item.day.mintemp_f,
+                            width: item.day.maxtemp_f - item.day.mintemp_f,
+                        }}
+                    >
+                        <div
+                            className="min-max"
+                            style={{
+                                transform: `translateX(-${item.day.mintemp_f}px)`,
+                            }}
+                        ></div>
+                    </div>
+                </div>
                 <div>{Math.round(item.day.maxtemp_f)}°F</div>
             </div>
         ));

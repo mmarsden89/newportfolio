@@ -48,7 +48,7 @@ const Messaging = (props) => {
                     <div className="contact">
                         <>
                             <img src={email} autoFocus onClick={handleClick} />
-                            <img src={linkedinicon} autofocus />
+                            <img src={linkedinicon} autoFocus />
                         </>
                     </div>
                 )}

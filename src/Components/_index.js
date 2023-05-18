@@ -6,6 +6,7 @@ import Sunset from "./Sunset/Sunset";
 import Welcome from "./Welcome/Welcome";
 import WorkForYou from "./WorkForYou/WorkForYou";
 import DisplayInfo from "./DisplayInfo/DisplayInfo";
+import Customize from "./Cutomize/Customize";
 
 export {
     Designer,
@@ -16,4 +17,5 @@ export {
     Welcome,
     WorkForYou,
     DisplayInfo,
+    Customize,
 };

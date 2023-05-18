@@ -9,6 +9,7 @@ import {
     Navigation,
     DragAndDrop,
     DisplayInfo,
+    Customize,
 } from "./Components/_index";
 
 function App() {
@@ -73,11 +74,11 @@ function App() {
         const removeBalloons = () => {
             setShowBalloons(false);
         };
+        renderMessage("Balloons launched", true);
         setTimeout(removeBalloons, 60000);
     };
 
     const setTheme = () => {
-        console.log("day", day);
         setDay(!day);
     };
 
@@ -85,7 +86,7 @@ function App() {
         setShowMessage(true);
         setDisplayMessage(msg);
         setMsgBool(good ? true : false);
-        setTimeout(() => setShowMessage(false), 3000);
+        setTimeout(() => setShowMessage(false), 4000);
     };
 
     return (
@@ -103,6 +104,7 @@ function App() {
             />
             <Designer className={classArr[1]} style={value} />
             <Welcome className={classArr[0]} style={value} />
+            <Customize />
             <Messaging
                 currentSlide={currentSlide}
                 handleNextSlide={handleNextSlide}

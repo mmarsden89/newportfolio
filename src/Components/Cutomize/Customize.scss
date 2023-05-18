@@ -1,0 +1,93 @@
+$color: #707070;
+
+.customize-container {
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    position: absolute;
+    // background: #0e0c0e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .customize-top {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        margin-top: 50px;
+        svg {
+            margin: 0 auto;
+            margin-top: -125px;
+            // transform: scaleX(80vw);
+        }
+    }
+
+    .customize-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 800px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        div {
+            height: 250px;
+            // background: #211c21;
+            width: 250px;
+            border-radius: 6px;
+
+            h1 {
+                font-size: 18px;
+            }
+            p {
+                margin: 0;
+                padding: 0 10px;
+            }
+        }
+    }
+    .color-picker-container {
+        position: absolute;
+        bottom: 25px;
+        left: calc(50% - 500px);
+        background: #e1e1e130;
+        width: 1000px;
+        height: 75px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 6px;
+
+        .color-picker {
+            height: 50px;
+            width: 150px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            .background,
+            .color {
+                position: absolute;
+                border: 0;
+                appearance: none;
+                background: transparent;
+                -webkit-appearance: none;
+                width: 100%;
+                height: 100%;
+            }
+            input[type="color"]::-webkit-color-swatch {
+                border: none;
+            }
+            label {
+                font-size: 12px;
+                position: absolute;
+                top: 30px;
+                // right: -30px;
+            }
+            .hex {
+                top: 15px;
+                font-weight: 700;
+            }
+        }
+    }
+}

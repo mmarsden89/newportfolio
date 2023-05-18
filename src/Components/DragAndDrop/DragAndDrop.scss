@@ -159,7 +159,7 @@ $ltborder: #d2d2d7;
                         background-image: linear-gradient(
                             60deg,
                             #350835,
-                            #ffb03a,
+                            #f3bd05,
                             #350835
                         );
                     }
@@ -264,13 +264,14 @@ $ltborder: #d2d2d7;
 
             .min-max-container {
                 width: 100px;
-                height: 10px;
+                height: 3px;
                 position: relative;
+                margin-right: 5px;
 
                 .min-max-box {
                     overflow: hidden;
                     position: absolute;
-                    height: 10px;
+                    height: 3px;
                     width: 100px;
 
                     .min-max {

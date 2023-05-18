@@ -122,7 +122,7 @@ const Navigation = (props) => {
                             balloons
                         </button>
                     ) : (
-                        <div className="nav-link">launched</div>
+                        <div className="nav-link"></div>
                     ))}
 
                 {currentSlide === 4 && (

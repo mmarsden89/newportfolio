@@ -44,7 +44,7 @@ const Messaging = (props) => {
                         <img src={codepen} />
                     </a>
                 )}
-                {currentSlide === 4 && (
+                {currentSlide === 5 && (
                     <div className="contact">
                         <>
                             <img src={email} autoFocus onClick={handleClick} />
@@ -59,7 +59,7 @@ const Messaging = (props) => {
                         &lsaquo;
                     </div>
                 )}
-                {currentSlide < 4 && (
+                {currentSlide < 5 && (
                     <div onClick={handleNextSlide} className="right">
                         &rsaquo;
                     </div>

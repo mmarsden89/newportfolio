@@ -9,20 +9,32 @@ const slideTwo = [
 ];
 
 const slideThree = [
+    "a creative designer who loves to develop",
+    "aesthetic solutions that captivate users",
+];
+
+const slideFour = [
     "a curious developer who loves to tinker",
     "with solutions that benefit users",
 ];
 
-const slideFour = [
+const slideFive = [
     "a creative developer who loves to build",
     "fun animations that captivate users",
 ];
 
-const slideFive = [
+const slideSix = [
     "and I want to work with you",
     "----------------------------",
 ];
 
-const differentSlides = [slideOne, slideTwo, slideThree, slideFour, slideFive];
+const differentSlides = [
+    slideOne,
+    slideTwo,
+    slideThree,
+    slideFour,
+    slideFive,
+    slideSix,
+];
 
 export default differentSlides;

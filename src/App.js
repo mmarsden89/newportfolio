@@ -14,7 +14,7 @@ import {
 
 function App() {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [classArr, setClassArr] = useState(["", "", "", ""]);
+    const [classArr, setClassArr] = useState(["", "", "", "", ""]);
     const [value, setValue] = useState(0);
     const [colorRange, setColorRange] = useState(false);
     const [zip, setZip] = useState("02144");
@@ -27,8 +27,7 @@ function App() {
     useEffect(() => {}, [classArr, value, zip, day]);
 
     const handleNextSlide = () => {
-        console.log("current slide", currentSlide);
-        if (currentSlide < 4) {
+        if (currentSlide < 5) {
             let copy = classArr;
             copy[currentSlide] = "move-left";
             setValue(0);
@@ -36,7 +35,6 @@ function App() {
             setCurrentSlide(currentSlide + 1);
             setColorRange(false);
             if (currentSlide + 1 !== 2) {
-                console.log("current slide does not equal 2");
                 setDay(false);
             }
         }
@@ -92,9 +90,9 @@ function App() {
     return (
         <div className="App">
             <WorkForYou />
-            <Sunset className={classArr[3]} showBalloons={showBalloons} />
+            <Sunset className={classArr[4]} showBalloons={showBalloons} />
             <DragAndDrop
-                className={classArr[2]}
+                className={classArr[3]}
                 zip={zip}
                 day={day}
                 setTheme={setTheme}
@@ -102,9 +100,9 @@ function App() {
                 currentslide={currentSlide}
                 setZip={setZip}
             />
+            <Customize className={classArr[2]} renderMessage={renderMessage} />
             <Designer className={classArr[1]} style={value} />
             <Welcome className={classArr[0]} style={value} />
-            <Customize />
             <Messaging
                 currentSlide={currentSlide}
                 handleNextSlide={handleNextSlide}

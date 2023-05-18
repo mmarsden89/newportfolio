@@ -86,14 +86,14 @@ const Navigation = (props) => {
                         <div onClick={handleColorRange}>x</div>
                     </div>
                 )}
-                {currentSlide === 2 && !editZip && (
+                {currentSlide === 3 && !editZip && (
                     <div className="nav-link change-zip">
                         <div onClick={handleChangeZip} className="nav">
                             change zip
                         </div>
                     </div>
                 )}
-                {currentSlide === 2 && editZip && (
+                {currentSlide === 3 && editZip && (
                     <div className="nav-link zip">
                         <form>
                             <input
@@ -113,7 +113,7 @@ const Navigation = (props) => {
                     </div>
                 )}
 
-                {currentSlide === 3 &&
+                {currentSlide === 4 &&
                     (!showBalloons ? (
                         <button
                             className="release-balloons"
@@ -125,7 +125,7 @@ const Navigation = (props) => {
                         <div className="nav-link"></div>
                     ))}
 
-                {currentSlide === 4 && (
+                {currentSlide === 5 && (
                     <div className="nav-link social-container">
                         <a href="https://github.com/mmarsden89" target="_blank">
                             <img src={githubicon} className="github-icon" />

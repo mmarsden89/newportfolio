@@ -1,0 +1,127 @@
+import React from "react";
+
+const Hero = (props) => {
+    const { primaryColor, secondaryColor, accentColor, textColor } = props;
+    return (
+        <svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+            <rect
+                stroke="#000"
+                fill={primaryColor}
+                x="13"
+                y="113"
+                width="266"
+                height="46"
+                id="svg_1"
+                rx="6"
+                stroke-width="0"
+            />
+            <path
+                stroke="#000"
+                fill={secondaryColor}
+                opacity="undefined"
+                d="m295,118.18919c0,-2.81969 2.73973,-5.18919 6,-5.18919l282,0c3.26027,0 6,2.3695 6,5.18919l0,213.62163c0,2.81969 -2.73973,5.18919 -6,5.18919l-282,0c-3.26027,0 -6,-2.3695 -6,-5.18919l0,-213.62163z"
+                id="svg_2"
+                stroke-width="0"
+            />
+            <rect
+                stroke="#000"
+                fill={textColor}
+                x="238"
+                y="171"
+                width="41"
+                height="166"
+                id="svg_3"
+                rx="6"
+                stroke-width="0"
+            />
+            <rect
+                stroke="#000"
+                fill={secondaryColor}
+                x="13"
+                y="174"
+                width="209"
+                height="51"
+                id="svg_4"
+                rx="6"
+                stroke-width="0"
+            />
+            <rect
+                fill={primaryColor}
+                stroke="#000"
+                x="13"
+                y="244"
+                width="92"
+                height="93"
+                id="svg_5"
+                rx="6"
+                stroke-width="0"
+            />
+            <rect
+                fill={accentColor}
+                stroke="#000"
+                x="130"
+                y="244"
+                width="92"
+                height="93"
+                id="svg_6"
+                rx="6"
+                stroke-width="0"
+            />
+            <rect
+                stroke="#000"
+                fill={secondaryColor}
+                stroke-width="0"
+                x="601"
+                y="113"
+                width="186"
+                height="41"
+                id="svg_9"
+                rx="6"
+            />
+            <rect
+                fill={primaryColor}
+                stroke="#000"
+                x="695"
+                y="170"
+                width="92"
+                height="93"
+                id="svg_10"
+                rx="6"
+                stroke-width="0"
+            />
+            <rect
+                fill={accentColor}
+                stroke="#000"
+                stroke-width="0"
+                x="601"
+                y="170"
+                width="79"
+                height="39"
+                id="svg_11"
+                rx="6"
+            />
+            <rect
+                fill={primaryColor}
+                stroke="#000"
+                stroke-width="0"
+                x="601"
+                y="224"
+                width="79"
+                height="39"
+                id="svg_12"
+                rx="6"
+            />
+
+            <path
+                stroke="#000"
+                fill={textColor}
+                stroke-width="0"
+                opacity="undefined"
+                d="m602,281.93103c0,-2.13604 2.73973,-3.93103 6,-3.93103l174,0c3.26027,0 6,1.795 6,3.93103l0,49.13793c0,2.13604 -2.73973,3.93103 -6,3.93103l-174,0c-3.26027,0 -6,-1.795 -6,-3.93103l0,-49.13793z"
+                id="svg_13"
+            />
+        </svg>
+    );
+};
+
+export default Hero;

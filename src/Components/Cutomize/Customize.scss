@@ -20,6 +20,13 @@ $color: #707070;
             margin: 0 auto;
             margin-top: -100px;
             // transform: scaleX(80vw);
+            rect,
+            path {
+                transition: 0.5s;
+                &:hover {
+                    opacity: 0.75;
+                }
+            }
         }
     }
 
@@ -30,6 +37,7 @@ $color: #707070;
         width: 800px;
         margin: 0 auto;
         div {
+            transition: 0.5s;
             height: 250px;
             // background: #211c21;
             width: 250px;
@@ -41,6 +49,10 @@ $color: #707070;
             p {
                 margin: 0;
                 padding: 0 10px;
+            }
+
+            &:hover {
+                opacity: 0.75;
             }
         }
 
@@ -59,15 +71,25 @@ $color: #707070;
         background: #e1e1e130;
         transition: 1s;
         cursor: pointer;
+
+        &:hover {
+            opacity: 0.9;
+        }
     }
 
     .cancel {
-        color: #707070;
-        background: #211c21;
-        height: 25px;
-        width: 25px;
-        border-radius: 50%;
+        // color: #707070;
+        // background: #211c21;
+        // height: 25px;
+        // width: 25px;
+        // border-radius: 50%;
+        transition: 1s;
         cursor: pointer;
+
+        &:hover {
+            opacity: 0.75;
+            transform: scale(0.9);
+        }
     }
 
     .hidden {
@@ -79,9 +101,9 @@ $color: #707070;
     .color-picker-container {
         position: absolute;
         bottom: 25px;
-        left: calc(50% - 500px);
+        left: calc(50% - 625px);
         background: #e1e1e130;
-        width: 1000px;
+        width: 1250px;
         height: 75px;
         display: flex;
         flex-direction: row;
@@ -100,6 +122,7 @@ $color: #707070;
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
+            transition: 0.5s;
             .color {
                 border-radius: 6px;
                 position: absolute;
@@ -125,10 +148,15 @@ $color: #707070;
                 top: 15px;
                 font-weight: 700;
             }
+
+            &:hover {
+                transform: scale(0.95);
+            }
         }
 
         .dice-roll,
-        .copy {
+        .copy,
+        .home {
             cursor: pointer;
             height: 50px;
             width: 50px;
@@ -140,6 +168,50 @@ $color: #707070;
             align-items: center;
             border-radius: 6px;
         }
+
+        .tooltip {
+            transition: 0.5s;
+            .span-text {
+                opacity: 0;
+                width: 100px;
+                background-color: #161316;
+                color: #fff;
+                text-align: center;
+                padding: 5px 0;
+                border-radius: 6px;
+                transition: 0.5s;
+
+                /* Position the tooltip text - see examples below! */
+                position: absolute;
+                top: -50px;
+                z-index: 1;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 25px;
+                    width: 25px;
+                    background: #161316;
+                    transform: rotate(45deg);
+                    bottom: -5px;
+                    left: 38px;
+                    z-index: -1;
+                }
+
+                &:nth-child(1) {
+                    top: -30px;
+                }
+            }
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover {
+            transform: scale(0.95);
+            .span-text {
+                opacity: 1;
+            }
+        }
+
         .dice-roll {
             svg {
                 transition: 1s;

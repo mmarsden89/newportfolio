@@ -88,6 +88,7 @@
         }
     }
     .codepen {
+        animation: 0.5s codepen-fade linear;
         img {
             width: 150px;
             filter: grayscale(1) invert(1);
@@ -102,6 +103,15 @@
             &:active {
                 opacity: 0.3;
                 transform: scale(0.9);
+            }
+        }
+
+        @keyframes codepen-fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
             }
         }
     }

@@ -86,6 +86,7 @@ const Navigation = (props) => {
                         <div onClick={handleColorRange}>x</div>
                     </div>
                 )}
+                {currentSlide == 2 && <div className="nav-link"></div>}
                 {currentSlide === 3 && !editZip && (
                     <div className="nav-link change-zip">
                         <div onClick={handleChangeZip} className="nav">

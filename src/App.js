@@ -23,6 +23,7 @@ function App() {
     const [displayMessage, setDisplayMessage] = useState("");
     const [showMessage, setShowMessage] = useState(false);
     const [msgBool, setMsgBool] = useState(true);
+    const [toolbar, setToolbar] = useState(false);
 
     useEffect(() => {}, [classArr, value, zip, day]);
 
@@ -87,6 +88,10 @@ function App() {
         setTimeout(() => setShowMessage(false), 4000);
     };
 
+    const displayToolbar = () => {
+        setToolbar(!toolbar);
+    };
+
     return (
         <div className="App">
             <WorkForYou />
@@ -100,7 +105,12 @@ function App() {
                 currentslide={currentSlide}
                 setZip={setZip}
             />
-            <Customize className={classArr[2]} renderMessage={renderMessage} />
+            <Customize
+                className={classArr[2]}
+                renderMessage={renderMessage}
+                toolbar={toolbar}
+                displayToolbar={displayToolbar}
+            />
             <Designer className={classArr[1]} style={value} />
             <Welcome className={classArr[0]} style={value} />
             <Messaging

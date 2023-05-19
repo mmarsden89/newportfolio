@@ -41,7 +41,7 @@ const Messaging = (props) => {
                         target="_blank"
                         className="codepen"
                     >
-                        <img src={codepen} />
+                        <img src={codepen} className="" />
                     </a>
                 )}
                 {currentSlide === 5 && (

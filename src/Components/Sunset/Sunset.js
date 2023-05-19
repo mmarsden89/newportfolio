@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Sunset.scss";
 import { balloon, desertbg } from "../../Assets/Images/_index";
+import Transmalfadorian from "./Transmalfadorian";
 
 const Sunset = (props) => {
     const { className, showBalloons } = props;
@@ -58,6 +59,7 @@ const Sunset = (props) => {
                 <img src={desertbg} className="bg-image" alt="" />
             </div>
             {showBalloons && balloonsMap}
+            <Transmalfadorian />
         </div>
     );
 };

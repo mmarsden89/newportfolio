@@ -9,8 +9,8 @@ const slideTwo = [
 ];
 
 const slideThree = [
-    "a creative designer who loves to develop",
-    "aesthetic solutions that captivate users",
+    "a developer who loves to put the power",
+    "of customization into the hands of users",
 ];
 
 const slideFour = [
@@ -19,8 +19,8 @@ const slideFour = [
 ];
 
 const slideFive = [
-    "a creative developer who loves to build",
-    "fun animations that captivate users",
+    "a creative developer with experience",
+    "working on a variety of projects",
 ];
 
 const slideSix = [

@@ -1,9 +1,9 @@
 $foreground: #1e0005;
 
 .sunset-container {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
+    // position: absolute;
+    height: 100%;
+    width: 100%;
     overflow-y: hidden;
     background-color: #2a0539;
     z-index: 95;
@@ -11,8 +11,8 @@ $foreground: #1e0005;
     left: 0;
 
     .stars-container {
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         position: absolute;
 
         .star {
@@ -64,8 +64,8 @@ $foreground: #1e0005;
         }
     }
     .balloon-container {
-        width: 100vw;
-        height: 105vh;
+        width: 100%;
+        height: 105%;
         top: 0;
         position: absolute;
         // z-index: 100;
@@ -76,7 +76,7 @@ $foreground: #1e0005;
                 transform: translateY(0);
             }
             to {
-                transform: translateY(-125vh);
+                transform: translateY(-125%);
             }
         }
 

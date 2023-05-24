@@ -4,13 +4,13 @@
     position: absolute;
     z-index: 100;
     bottom: -250px;
-    transform: scale(0.09) translateX(100vw);
-    animation: 120s travel linear infinite;
+    transform: scale(0.09);
+    animation: 160s travel linear infinite;
 
     @keyframes travel {
         0%,
-        50% {
-            left: 4000px;
+        40% {
+            left: 3000px;
         }
         100% {
             left: -1000px;
@@ -19,6 +19,18 @@
 
     .transmalfadorian {
         position: relative;
+
+        animation: 3s jump linear infinite;
+
+        @keyframes jump {
+            0%,
+            100% {
+                transform: translateY(50px);
+            }
+            50% {
+                transform: translateY(0px);
+            }
+        }
         .body {
             position: absolute;
             height: 80px;

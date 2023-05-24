@@ -54,6 +54,7 @@
 
         cursor: default;
         h1 {
+            pointer-events: none;
             font-size: 100px;
             font-family: Augillion;
             font-weight: 500;
@@ -70,6 +71,7 @@
         }
         .sub-header {
             text-align: left;
+            pointer-events: none;
             h2 {
                 margin: 0;
                 white-space: nowrap;

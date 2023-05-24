@@ -11,6 +11,7 @@ import {
     DisplayInfo,
     Customize,
 } from "./Components/_index";
+import Developer from "./Components/Developer/Developer";
 
 function App() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -95,7 +96,8 @@ function App() {
     return (
         <div className="App">
             <WorkForYou />
-            <Sunset className={classArr[4]} showBalloons={showBalloons} />
+            {/* <Sunset className={classArr[4]} showBalloons={showBalloons} /> */}
+            <Developer className={classArr[4]} />
             <DragAndDrop
                 className={classArr[3]}
                 zip={zip}

@@ -12,9 +12,7 @@ const Messaging = (props) => {
         renderMessage,
     } = props;
 
-    useEffect(() => {
-        console.log("hi hi hi");
-    }, [currentSlide, day]);
+    useEffect(() => {}, [currentSlide, day]);
 
     const handleClick = () => {
         navigator.clipboard.writeText("mattmarsdendev@gmail.com");
@@ -24,9 +22,7 @@ const Messaging = (props) => {
     return (
         <div className={`messaging-container ${day ? " day" : " night"}`}>
             <div className="messaging">
-                <h1>
-                    Hi! I'm <span>Matt</span>
-                </h1>
+                <h1>Hi! I'm Matt</h1>
                 <div className="sub-header">
                     <h2 key={currentSlide}>
                         {differentSlides[currentSlide][0]}

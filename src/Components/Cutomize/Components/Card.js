@@ -6,15 +6,20 @@ const Card = (props) => {
         accentColor,
         heading,
         body,
-        secondaryColor,
         textColor,
         svg,
+        secondary,
     } = props;
     return (
         <div style={{ backgroundColor: primaryColor }}>
-            <h1 style={{ color: accentColor }}>{heading}</h1>
+            <h1 style={{ color: accentColor, fontFamily: secondary }}>
+                {heading}
+            </h1>
             {svg}
-            <p className="text" style={{ color: textColor }}>
+            <p
+                className="text"
+                style={{ color: textColor, fontFamily: secondary }}
+            >
                 {body}
             </p>
         </div>

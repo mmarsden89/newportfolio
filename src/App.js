@@ -19,12 +19,14 @@ function App() {
     const [value, setValue] = useState(0);
     const [colorRange, setColorRange] = useState(false);
     const [zip, setZip] = useState("02144");
-    const [showBalloons, setShowBalloons] = useState(false);
     const [day, setDay] = useState(false);
     const [displayMessage, setDisplayMessage] = useState("");
     const [showMessage, setShowMessage] = useState(false);
     const [msgBool, setMsgBool] = useState(true);
     const [toolbar, setToolbar] = useState(false);
+    const [primary, setPrimary] = useState("Augillion");
+    const [secondary, setSecondary] = useState("Sans serif");
+    const [fontsBool, setFontsBool] = useState(false);
 
     useEffect(() => {}, [classArr, value, zip, day]);
 
@@ -69,15 +71,6 @@ function App() {
         setZip(e.target.value);
     };
 
-    const releaseBallons = () => {
-        setShowBalloons(true);
-        const removeBalloons = () => {
-            setShowBalloons(false);
-        };
-        renderMessage("Balloons launched", true);
-        setTimeout(removeBalloons, 60000);
-    };
-
     const setTheme = () => {
         setDay(!day);
     };
@@ -90,13 +83,18 @@ function App() {
     };
 
     const displayToolbar = () => {
-        setToolbar(!toolbar);
+        const toolBool = !toolbar;
+        setToolbar(toolBool);
+        !toolBool && setFontsBool(false);
+    };
+
+    const displayFonts = () => {
+        setFontsBool(!fontsBool);
     };
 
     return (
         <div className="App">
             <WorkForYou />
-            {/* <Sunset className={classArr[4]} showBalloons={showBalloons} /> */}
             <Developer className={classArr[4]} />
             <DragAndDrop
                 className={classArr[3]}
@@ -112,6 +110,13 @@ function App() {
                 renderMessage={renderMessage}
                 toolbar={toolbar}
                 displayToolbar={displayToolbar}
+                setPrimary={setPrimary}
+                setSecondary={setSecondary}
+                primary={primary}
+                secondary={secondary}
+                fontsBool={fontsBool}
+                displayFonts={displayFonts}
+                setFontsBool={setFontsBool}
             />
             <Designer className={classArr[1]} style={value} />
             <Welcome className={classArr[0]} style={value} />
@@ -121,6 +126,8 @@ function App() {
                 handlePreviousSlide={handlePreviousSlide}
                 day={day}
                 renderMessage={renderMessage}
+                primary={primary}
+                secondary={secondary}
             />
             <Navigation
                 currentSlide={currentSlide}
@@ -131,9 +138,7 @@ function App() {
                 handleColorRange={handleColorRange}
                 colorRange={colorRange}
                 handleZipCode={handleZipCode}
-                releaseBallons={releaseBallons}
                 day={day}
-                showBalloons={showBalloons}
                 renderMessage={renderMessage}
             />
             <DisplayInfo

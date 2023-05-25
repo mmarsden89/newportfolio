@@ -10,6 +10,8 @@ const Messaging = (props) => {
         currentSlide,
         day,
         renderMessage,
+        primary,
+        secondary,
     } = props;
 
     useEffect(() => {}, [currentSlide, day]);
@@ -22,12 +24,20 @@ const Messaging = (props) => {
     return (
         <div className={`messaging-container ${day ? " day" : " night"}`}>
             <div className="messaging">
-                <h1>Hi! I'm Matt</h1>
+                <h1 style={{ fontFamily: currentSlide === 2 && primary }}>
+                    Hi! I'm Matt
+                </h1>
                 <div className="sub-header">
-                    <h2 key={currentSlide}>
+                    <h2
+                        key={currentSlide}
+                        style={{ fontFamily: currentSlide === 2 && secondary }}
+                    >
                         {differentSlides[currentSlide][0]}
                     </h2>
-                    <h2 key={currentSlide + "-two"}>
+                    <h2
+                        key={currentSlide + "-two"}
+                        style={{ fontFamily: currentSlide === 2 && secondary }}
+                    >
                         {differentSlides[currentSlide][1] || " "}
                     </h2>
                 </div>

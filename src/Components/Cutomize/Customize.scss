@@ -157,7 +157,8 @@ $color: #707070;
 
         .dice-roll,
         .copy,
-        .home {
+        .home,
+        .typography {
             cursor: pointer;
             height: 50px;
             width: 50px;
@@ -168,6 +169,88 @@ $color: #707070;
             justify-content: space-evenly;
             align-items: center;
             border-radius: 6px;
+        }
+
+        .typography {
+            .font {
+                transform: scaleX(1);
+                position: absolute;
+            }
+
+            .font-cancel {
+                transform: scaleX(0);
+                position: absolute;
+            }
+
+            .rotate-in {
+                transition: 0.5s;
+                transform: scaleX(0);
+            }
+            .rotate-out {
+                transition: 0.5s;
+                transition-delay: 0.2s;
+                transform: scaleX(1);
+            }
+        }
+        .typography-container {
+            .edit-typography {
+                position: absolute;
+                width: 200px;
+                height: 0;
+                right: 75px;
+                background: #e1e1e130;
+                border-radius: 6px 6px 0 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                label {
+                    text-align: left;
+                    margin-left: 25px;
+                }
+
+                select {
+                    width: 75%;
+                    margin: 0 auto;
+                }
+            }
+            .show-font {
+                transition: 1s;
+                height: 100px;
+                top: -100px;
+
+                label {
+                    opacity: 1;
+                    transition: 1s;
+                    transition-delay: 0.5s;
+                }
+
+                select,
+                option {
+                    opacity: 1;
+                    transition: 1s;
+                    transition-delay: 0.5s;
+                }
+            }
+            .hide-font {
+                transition: 1s;
+                transition-delay: 0.5s;
+                height: 0;
+                top: 0px;
+
+                label {
+                    transition: 1s;
+                    opacity: 0;
+                }
+
+                select,
+                option {
+                    // height: 0;
+                    opacity: 0 !important;
+                    transition: 1s;
+                    width: 0;
+                }
+            }
         }
 
         .tooltip {

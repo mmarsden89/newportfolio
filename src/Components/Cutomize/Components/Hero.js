@@ -13,7 +13,7 @@ const Hero = (props) => {
                 height="46"
                 id="svg_1"
                 rx="6"
-                stroke-width="0"
+                strokeWidth="0"
             />
             <path
                 stroke="#000"
@@ -21,7 +21,7 @@ const Hero = (props) => {
                 opacity="undefined"
                 d="m295,118.18919c0,-2.81969 2.73973,-5.18919 6,-5.18919l282,0c3.26027,0 6,2.3695 6,5.18919l0,213.62163c0,2.81969 -2.73973,5.18919 -6,5.18919l-282,0c-3.26027,0 -6,-2.3695 -6,-5.18919l0,-213.62163z"
                 id="svg_2"
-                stroke-width="0"
+                strokeWidth="0"
             />
             <rect
                 stroke="#000"
@@ -32,7 +32,7 @@ const Hero = (props) => {
                 height="166"
                 id="svg_3"
                 rx="6"
-                stroke-width="0"
+                strokeWidth="0"
             />
             <rect
                 stroke="#000"
@@ -43,7 +43,7 @@ const Hero = (props) => {
                 height="51"
                 id="svg_4"
                 rx="6"
-                stroke-width="0"
+                strokeWidth="0"
             />
             <rect
                 fill={primaryColor}
@@ -54,7 +54,7 @@ const Hero = (props) => {
                 height="93"
                 id="svg_5"
                 rx="6"
-                stroke-width="0"
+                strokeWidth="0"
             />
             <rect
                 fill={accentColor}
@@ -65,12 +65,12 @@ const Hero = (props) => {
                 height="93"
                 id="svg_6"
                 rx="6"
-                stroke-width="0"
+                strokeWidth="0"
             />
             <rect
                 stroke="#000"
                 fill={secondaryColor}
-                stroke-width="0"
+                strokeWidth="0"
                 x="601"
                 y="113"
                 width="186"
@@ -87,12 +87,12 @@ const Hero = (props) => {
                 height="93"
                 id="svg_10"
                 rx="6"
-                stroke-width="0"
+                strokeWidth="0"
             />
             <rect
                 fill={accentColor}
                 stroke="#000"
-                stroke-width="0"
+                strokeWidth="0"
                 x="601"
                 y="170"
                 width="79"
@@ -103,7 +103,7 @@ const Hero = (props) => {
             <rect
                 fill={primaryColor}
                 stroke="#000"
-                stroke-width="0"
+                strokeWidth="0"
                 x="601"
                 y="224"
                 width="79"
@@ -115,7 +115,7 @@ const Hero = (props) => {
             <path
                 stroke="#000"
                 fill={textColor}
-                stroke-width="0"
+                strokeWidth="0"
                 opacity="undefined"
                 d="m602,281.93103c0,-2.13604 2.73973,-3.93103 6,-3.93103l174,0c3.26027,0 6,1.795 6,3.93103l0,49.13793c0,2.13604 -2.73973,3.93103 -6,3.93103l-174,0c-3.26027,0 -6,-1.795 -6,-3.93103l0,-49.13793z"
                 id="svg_13"

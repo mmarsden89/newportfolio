@@ -20,9 +20,7 @@ const Navigation = (props) => {
         handleColorRange,
         colorRange,
         handleZipCode,
-        releaseBallons,
         day,
-        showBalloons,
         renderMessage,
     } = props;
 
@@ -57,7 +55,11 @@ const Navigation = (props) => {
     };
 
     return (
-        <div className={`navigation-container ${day ? " day" : " night"}`}>
+        <div
+            className={`navigation-container ${day ? " day" : " night"} ${
+                currentSlide === 4 && "portfolio"
+            }`}
+        >
             <div className="navigation-subcontainer">
                 <div onClick={handleHome} className="nav-link">
                     <div className="nav">home</div>
@@ -114,17 +116,7 @@ const Navigation = (props) => {
                     </div>
                 )}
 
-                {currentSlide === 4 &&
-                    (!showBalloons ? (
-                        <button
-                            className="release-balloons"
-                            onClick={releaseBallons}
-                        >
-                            balloons
-                        </button>
-                    ) : (
-                        <div className="nav-link"></div>
-                    ))}
+                {currentSlide === 4 && <div className="nav-link"></div>}
 
                 {currentSlide === 5 && (
                     <div className="nav-link social-container">

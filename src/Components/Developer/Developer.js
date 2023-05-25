@@ -10,6 +10,7 @@ import {
     donuts,
     designconcept,
     moderndesign3,
+    designboxanimated,
 } from "../../Assets/Images/_index";
 
 const Developer = (props) => {
@@ -17,6 +18,7 @@ const Developer = (props) => {
     const handleClick = () => {
         console.log("clicked");
     };
+
     return (
         <div className={`developer-container ${className}`}>
             <div className="row-1">
@@ -54,6 +56,7 @@ const Developer = (props) => {
                 </div>
             </div>
             <div className="overlay"></div>
+            <div className="nav-bar"></div>
         </div>
     );
 };

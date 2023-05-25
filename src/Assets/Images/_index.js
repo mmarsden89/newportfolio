@@ -23,6 +23,7 @@ import moderndesign from "./moderndesign.png";
 import donuts from "./donuts.png";
 import designconcept from "./designconcept.png";
 import moderndesign3 from "./moderndesign3.png";
+import designboxanimated from "./designboxanimated.gif";
 
 export {
     airquality,
@@ -50,4 +51,5 @@ export {
     donuts,
     designconcept,
     moderndesign3,
+    designboxanimated,
 };

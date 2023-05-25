@@ -9,7 +9,19 @@ import {
 } from "./Components/_index";
 import "./Customize.scss";
 const Customize = (props) => {
-    const { renderMessage, className, toolbar, displayToolbar } = props;
+    const {
+        renderMessage,
+        className,
+        toolbar,
+        displayToolbar,
+        setPrimary,
+        setSecondary,
+        primary,
+        secondary,
+        fontsBool,
+        displayFonts,
+        setFontsBool,
+    } = props;
     const [backgroundColor, setBackgroundColor] = useState("#0e0c0e");
     const [primaryColor, setPrimaryColor] = useState("#211c21");
     const [secondaryColor, setSecondaryColor] = useState("#f3bd05");
@@ -70,6 +82,8 @@ const Customize = (props) => {
         setSecondaryColor("#f3bd05");
         setAccentColor("#707070");
         setTextColor("#e6dc75");
+        setPrimary("Augillion");
+        setSecondary("Sans serif");
     };
 
     const toolBarProps = {
@@ -89,6 +103,13 @@ const Customize = (props) => {
         copyColors,
         returnDefaults,
         displayToolbar,
+        setPrimary,
+        setSecondary,
+        primary,
+        secondary,
+        fontsBool,
+        displayFonts,
+        setFontsBool,
     };
 
     return (
@@ -110,6 +131,7 @@ const Customize = (props) => {
                     accentColor={accentColor}
                     secondaryColor={secondaryColor}
                     textColor={textColor}
+                    secondary={secondary}
                     heading="Front End Development"
                     body="Three years of experience developing full-stack applications with a focus on the front-end"
                     svg={<FrontEndSVG secondaryColor={secondaryColor} />}
@@ -119,6 +141,7 @@ const Customize = (props) => {
                     accentColor={accentColor}
                     secondaryColor={secondaryColor}
                     textColor={textColor}
+                    secondary={secondary}
                     heading="Custom Code Solutions"
                     body="Scalable custom coding solutions for a variety of
                     Content Management Systems"
@@ -129,6 +152,7 @@ const Customize = (props) => {
                     accentColor={accentColor}
                     secondaryColor={secondaryColor}
                     textColor={textColor}
+                    secondary={secondary}
                     heading="A/B Testing"
                     body="Hundreds of successful A/B experiments run on household
                 name's products"

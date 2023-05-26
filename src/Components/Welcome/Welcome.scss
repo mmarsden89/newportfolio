@@ -70,4 +70,11 @@
             }
         }
     }
+
+    @media (max-width: 440px) {
+        // display: none;
+        .sub-container {
+            animation: none;
+        }
+    }
 }

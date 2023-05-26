@@ -32,17 +32,6 @@
     }
 }
 
-.portfolio {
-    // transition: 1s;
-    // background: #000000;
-    // opacity: 0.9;
-    // width: 100vw !important;
-
-    // .navigation-subcontainer {
-    //     width: 300px !important;
-    // }
-}
-
 .navigation-container {
     height: 50px;
     position: absolute;
@@ -265,5 +254,9 @@
                 width: 75px !important;
             }
         }
+    }
+
+    @media (max-width: 440px) {
+        // display: none;
     }
 }

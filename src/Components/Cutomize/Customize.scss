@@ -143,6 +143,7 @@ $color: #707070;
                 position: absolute;
                 top: 30px;
                 cursor: pointer;
+                pointer-events: none;
                 // right: -30px;
             }
             .hex {
@@ -317,6 +318,76 @@ $color: #707070;
                     transform: scale(0.85);
                 }
             }
+        }
+    }
+
+    @media (max-width: 440px) {
+        // display: none;
+        .customize-top {
+            margin-top: 80px;
+
+            svg {
+                width: 90%;
+            }
+        }
+
+        .customize-bottom {
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 40%;
+            margin-bottom: 75px;
+
+            div {
+                width: 95%;
+                display: flex;
+                flex-direction: row;
+                height: 75px;
+                align-items: center;
+                margin: 0 auto;
+                border-radius: 16px;
+                h1 {
+                    display: none;
+                }
+                svg {
+                    height: 50px;
+                }
+
+                .text {
+                    // white-space: normal;
+                    // text-align: left;
+                    width: 75%;
+                }
+            }
+        }
+
+        .color-picker-container {
+            flex-wrap: wrap;
+            height: 40%;
+            left: 0;
+            width: 100%;
+            bottom: 50px;
+            background: #e1e1e199;
+
+            .color-picker:nth-child(5) {
+                margin: 0 125px;
+            }
+
+            .typography-container {
+                display: none;
+            }
+
+            .copy {
+                display: none;
+            }
+        }
+
+        .hidden {
+            bottom: -500px;
+        }
+
+        .customize-button {
+            bottom: 100px;
         }
     }
 }

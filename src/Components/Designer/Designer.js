@@ -143,6 +143,150 @@ const Designer = (props) => {
                 <div onMouseOver={rotate}></div>
                 <div></div>
             </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div onMouseOver={rotate}></div>
+                <div></div>
+            </div>
         </div>
     );
 };

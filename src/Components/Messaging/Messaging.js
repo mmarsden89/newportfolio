@@ -14,7 +14,7 @@ const Messaging = (props) => {
         secondary,
     } = props;
 
-    useEffect(() => {}, [currentSlide, day]);
+    useEffect(() => {}, [currentSlide]);
 
     const handleClick = () => {
         navigator.clipboard.writeText("mattmarsdendev@gmail.com");
@@ -41,6 +41,9 @@ const Messaging = (props) => {
                         {differentSlides[currentSlide][1] || " "}
                     </h2>
                 </div>
+                {currentSlide === 0 && (
+                    <div className="mobile-swipe">Swipe to navigate</div>
+                )}
                 {currentSlide === 1 && (
                     <a
                         href="https://codepen.io/mmarsden89-the-scripter"

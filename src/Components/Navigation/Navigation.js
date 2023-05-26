@@ -30,7 +30,6 @@ const Navigation = (props) => {
         setCurrentSlide(0);
         setClassArr(["", "", "", ""]);
     };
-    console.log(currentSlide);
 
     const handleChangeZip = () => {
         setEditZip(true);
@@ -55,11 +54,7 @@ const Navigation = (props) => {
     };
 
     return (
-        <div
-            className={`navigation-container ${day ? " day" : " night"} ${
-                currentSlide === 4 && "portfolio"
-            }`}
-        >
+        <div className={`navigation-container ${day ? " day" : " night"}`}>
             <div className="navigation-subcontainer">
                 <div onClick={handleHome} className="nav-link">
                     <div className="nav">home</div>

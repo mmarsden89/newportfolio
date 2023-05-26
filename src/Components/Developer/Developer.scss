@@ -95,4 +95,33 @@
         pointer-events: none;
         // display: none;
     }
+
+    @media (max-width: 440px) {
+        // display: none;
+        align-items: end;
+
+        .row-1,
+        .row-2 {
+            height: 50% !important;
+            width: 150%;
+            grid-template-columns: repeat(5, 21%) !important;
+
+            .image {
+                img {
+                    border-radius: 9px !important;
+                    width: 100% !important;
+                }
+            }
+        }
+
+        .row-1 {
+            transform: scale(1.75) rotate(-10deg) translatex(-215px)
+                translateY(-50px) !important;
+        }
+
+        .row-2 {
+            transform: scale(1.75) rotate(-10deg) translatex(-172px)
+                translateY(-75px) !important;
+        }
+    }
 }

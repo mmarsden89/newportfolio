@@ -170,10 +170,10 @@ $ltborder: #d2d2d7;
         .weather-subcontainer,
         .air-quality-container,
         .wind-direction {
-            margin-top: 30px;
+            margin-top: 20px;
         }
         .astro-container {
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         .weather-container {
@@ -337,5 +337,9 @@ $ltborder: #d2d2d7;
                 }
             }
         }
+    }
+
+    @media (max-width: 440px) {
+        // display: none;
     }
 }

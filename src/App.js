@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import {
     Welcome,
     Designer,
-    Sunset,
     WorkForYou,
     Messaging,
     Navigation,
@@ -28,7 +27,7 @@ function App() {
     const [secondary, setSecondary] = useState("Sans serif");
     const [fontsBool, setFontsBool] = useState(false);
 
-    useEffect(() => {}, [classArr, value, zip, day]);
+    console.log("currentSlide--->", currentSlide);
 
     const handleNextSlide = () => {
         if (currentSlide < 5) {
@@ -55,7 +54,6 @@ function App() {
             setColorRange(false);
 
             if (currentSlide - 1 !== 2) {
-                console.log("current slide does not equal 2");
                 setDay(false);
             }
         }
@@ -92,8 +90,29 @@ function App() {
         setFontsBool(!fontsBool);
     };
 
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    const checkDirection = () => {
+        if (touchendX < touchstartX) handleNextSlide();
+        if (touchendX > touchstartX) handlePreviousSlide();
+    };
+
+    const touchStart = (e) => {
+        touchstartX = e.changedTouches[0].screenX;
+    };
+
+    const touchEnd = (e) => {
+        touchendX = e.changedTouches[0].screenX;
+        checkDirection();
+    };
+
     return (
-        <div className="App">
+        <div
+            className="App"
+            onTouchStart={(e) => touchStart(e)}
+            onTouchEnd={(e) => touchEnd(e)}
+        >
             <WorkForYou />
             <Developer className={classArr[4]} />
             <DragAndDrop

@@ -13,6 +13,7 @@ import {
     ContainerComponent,
     Theme,
 } from "./Components/_index.js";
+import dummyData from "./DummyData";
 
 const DragAndDrop = (props) => {
     const {
@@ -28,7 +29,8 @@ const DragAndDrop = (props) => {
     const [hourly, setHourly] = useState([]);
 
     const getWeather = async () => {
-        const getWeather = await axios(`${apiUrl}/weather?zip=${zip}`);
+        const getWeather =
+            (await axios(`${apiUrl}/weather?zip=${zip}`)) || dummyData;
         if (getWeather.data.error) {
             renderMessage("Invalid zipcode. Please try again", false);
             setZip("02144");
@@ -56,7 +58,7 @@ const DragAndDrop = (props) => {
 
     useEffect(() => {
         getWeather();
-    }, [zip, className, day]);
+    }, [zip]);
 
     return (
         <ContainerComponent

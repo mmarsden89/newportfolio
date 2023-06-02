@@ -33,7 +33,7 @@ const Forecast = (props) => {
         ));
 
     return (
-        <div className="icon">
+        <div className="icon forecast-map">
             {forecastMap}
             <p>5-day forecast</p>
         </div>

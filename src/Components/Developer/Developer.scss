@@ -52,37 +52,6 @@
                 border-radius: 15px;
             }
         }
-
-        .headphones {
-            height: 100%;
-            background: url("../../Assets/Images/headphones.jpg");
-            background-size: cover;
-            background-position: -100px;
-            margin: 0 10px;
-            width: 100%;
-            border-radius: 15px;
-            position: relative;
-
-            .feel {
-                position: absolute;
-                top: 30%;
-                font-size: 35px;
-                font-weight: 900;
-                width: 25px;
-                left: 15px;
-            }
-            .button {
-                position: absolute;
-                top: 65%;
-                font-size: 10px;
-                background: white;
-                left: 40px;
-                color: black;
-                padding: 5px 10px;
-            }
-        }
-
-        // transform: rotate(-5deg);
     }
     .overlay {
         z-index: 10;
@@ -115,12 +84,23 @@
         }
 
         .row-1 {
-            transform: scale(1.75) rotate(-10deg) translatex(-215px)
+            transform: scale(1.7) rotate(-10deg) translatex(-215px)
                 translateY(-50px) !important;
         }
 
         .row-2 {
-            transform: scale(1.75) rotate(-10deg) translatex(-172px)
+            transform: scale(1.7) rotate(-10deg) translatex(-172px)
+                translateY(-75px) !important;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .row-1 {
+            transform: scale(1.5) rotate(-10deg) translatex(-210px)
+                translateY(-45px) !important;
+        }
+        .row-2 {
+            transform: scale(1.5) rotate(-10deg) translatex(-172px)
                 translateY(-75px) !important;
         }
     }

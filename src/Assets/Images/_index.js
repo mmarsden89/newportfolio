@@ -13,11 +13,9 @@ import wind from "./wind.png";
 import waves from "./waves.svg";
 import codepen from "./codepen.png";
 import exploremars from "./exploremars.png";
-import headphones from "./headphones.jpg";
+import headphones from "./headphones.png";
 import mountainview from "./mountainview.png";
 import designbox from "./designbox.png";
-import nature from "./nature.jpg";
-import bison from "./bison.png";
 import rainbow from "./rainbow.png";
 import moderndesign from "./moderndesign.png";
 import donuts from "./donuts.png";
@@ -44,8 +42,6 @@ export {
     headphones,
     mountainview,
     designbox,
-    nature,
-    bison,
     rainbow,
     moderndesign,
     donuts,

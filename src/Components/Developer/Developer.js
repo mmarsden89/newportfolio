@@ -10,7 +10,7 @@ import {
     donuts,
     designconcept,
     moderndesign3,
-    designboxanimated,
+    headphones,
 } from "../../Assets/Images/_index";
 
 const Developer = (props) => {
@@ -23,9 +23,8 @@ const Developer = (props) => {
         <div className={`developer-container ${className}`}>
             <div className="row-1">
                 <Wave handleClick={handleClick} />
-                <div className="headphones">
-                    <div className="feel">FEEL THE MUSIC</div>
-                    <div className="button">shop now</div>
+                <div className="image">
+                    <img src={headphones} />
                 </div>
                 <div className="image">
                     <img src={designbox} />

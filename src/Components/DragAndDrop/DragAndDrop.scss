@@ -341,5 +341,153 @@ $ltborder: #d2d2d7;
 
     @media (max-width: 440px) {
         // display: none;
+        padding-top: 50px;
+        justify-content: flex-start;
+        .weather-hourly-container {
+            height: 100px;
+            .hourly-container {
+                margin: 0 10px;
+
+                .hourly-text {
+                    margin: 0;
+                }
+
+                img {
+                    height: 25px;
+                    width: 25px;
+                }
+            }
+        }
+
+        .icon-container {
+            height: 25%;
+            // margin-top: -15px;
+            font-size: 12px;
+            .icon {
+                min-height: 0;
+                height: 55%;
+            }
+            .min-max-container {
+                display: none;
+            }
+            .weather-container {
+                height: 40%;
+                .current-conditions-p {
+                    display: none;
+                }
+                .weather-subcontainer {
+                    margin-top: 0 !important;
+                }
+            }
+
+            .forecast-map {
+                height: 40%;
+                .weather-day-container:nth-last-child(-n + 3) {
+                    display: none;
+                }
+                p {
+                    display: none;
+                }
+            }
+        }
+        .top {
+            margin-top: -35px;
+        }
+        .bottom {
+            margin-top: 100px;
+            justify-content: space-around;
+
+            .weather-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                div {
+                    margin: 0;
+                }
+                p {
+                    display: none;
+                }
+            }
+
+            .astro {
+                display: flex;
+                justify-content: center;
+                height: 40%;
+                margin-left: 25px;
+
+                .astro-container {
+                    margin-top: 0;
+
+                    .sunrise,
+                    .sunset {
+                        margin: 0;
+                    }
+                    .hours-of-daylight {
+                        display: none;
+                    }
+                }
+                p {
+                    display: none;
+                }
+            }
+
+            .air-quality {
+                margin-top: 25px;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+
+                .air-quality-container {
+                    margin-top: -15px;
+                    margin-right: 10px;
+
+                    div {
+                        .air-quality-img {
+                            margin: 0;
+                        }
+                    }
+                }
+                // p {
+                //     margin: 0;
+                // }
+            }
+        }
+    }
+    @media (max-width: 375px) {
+        .weather-hourly-container {
+            height: 75px;
+        }
+
+        .top {
+            margin-top: -10px;
+            .icon {
+                // width: 23%;
+                min-width: 140px;
+                height: 50%;
+            }
+
+            .weather-container {
+                .weather-subcontainer {
+                    div {
+                        img {
+                            width: 50px !important;
+                            height: 50px !important;
+                        }
+                    }
+                    p {
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            .icon {
+                min-width: 140px;
+            }
+            .astro {
+                margin-left: 0;
+            }
+        }
     }
 }

@@ -16,21 +16,14 @@ import {
 import dummyData from "./DummyData";
 
 const DragAndDrop = (props) => {
-    const {
-        className,
-        zip,
-        setTheme,
-        day,
-        renderMessage,
-        currentSlide,
-        setZip,
-    } = props;
-    const [weather, setWeather] = useState({});
-    const [hourly, setHourly] = useState([]);
+    const { className, zip, setTheme, day, renderMessage, setZip } = props;
+    const [weather, setWeather] = useState(dummyData);
+    const [hourly, setHourly] = useState(
+        dummyData.forecast.forecastday[0].hour
+    );
 
     const getWeather = async () => {
-        const getWeather =
-            (await axios(`${apiUrl}/weather?zip=${zip}`)) || dummyData;
+        const getWeather = await axios(`${apiUrl}/weather?zip=${zip}`);
         if (getWeather.data.error) {
             renderMessage("Invalid zipcode. Please try again", false);
             setZip("02144");
@@ -68,11 +61,11 @@ const DragAndDrop = (props) => {
         >
             <Theme setTheme={setTheme} day={day} />
             <Hourly hourly={hourly} />
-            <CardContainer>
+            <CardContainer position={"top"}>
                 <Current />
                 <Forecast />
             </CardContainer>
-            <CardContainer>
+            <CardContainer position={"bottom"}>
                 <Wind />
                 <Astro />
                 <AirQuality />

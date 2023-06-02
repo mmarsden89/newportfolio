@@ -8,6 +8,7 @@ import {
     Hero,
 } from "./Components/_index";
 import "./Customize.scss";
+import colors from "./colors";
 const Customize = (props) => {
     const {
         renderMessage,
@@ -61,11 +62,12 @@ const Customize = (props) => {
     };
 
     const randomize = () => {
-        setBackgroundColor(getRandomColor());
-        setPrimaryColor(getRandomColor());
-        setSecondaryColor(getRandomColor());
-        setAccentColor(getRandomColor());
-        setTextColor(getRandomColor());
+        const colorIdx = Math.round(Math.random() * (colors.length - 1));
+        setBackgroundColor(colors[colorIdx][0]);
+        setPrimaryColor(colors[colorIdx][1]);
+        setSecondaryColor(colors[colorIdx][2]);
+        setAccentColor(colors[colorIdx][3]);
+        setTextColor(colors[colorIdx][4]);
     };
 
     const copyColors = () => {

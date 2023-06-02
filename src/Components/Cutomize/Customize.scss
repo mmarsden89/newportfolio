@@ -5,7 +5,6 @@ $color: #707070;
     width: 100vw;
     z-index: 97;
     position: absolute;
-    // background: #0e0c0e;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -40,7 +39,6 @@ $color: #707070;
         div {
             transition: 0.5s;
             height: 250px;
-            // background: #211c21;
             width: 250px;
             border-radius: 6px;
 
@@ -79,11 +77,6 @@ $color: #707070;
     }
 
     .cancel {
-        // color: #707070;
-        // background: #211c21;
-        // height: 25px;
-        // width: 25px;
-        // border-radius: 50%;
         transition: 1s;
         cursor: pointer;
 
@@ -266,7 +259,6 @@ $color: #707070;
                 border-radius: 6px;
                 transition: 0.5s;
 
-                /* Position the tooltip text - see examples below! */
                 position: absolute;
                 top: -50px;
                 z-index: 1;
@@ -289,7 +281,6 @@ $color: #707070;
             }
         }
 
-        /* Show the tooltip text when you mouse over the tooltip container */
         .tooltip:hover {
             transform: scale(0.95);
             .span-text {
@@ -321,6 +312,14 @@ $color: #707070;
         }
     }
 
+    @media (max-width: 1366px) {
+        .customize-bottom {
+            div {
+                height: 225px;
+            }
+        }
+    }
+
     @media (max-width: 440px) {
         // display: none;
         .customize-top {
@@ -328,6 +327,7 @@ $color: #707070;
 
             svg {
                 width: 90%;
+                margin-right: 27px;
             }
         }
 
@@ -345,7 +345,7 @@ $color: #707070;
                 height: 75px;
                 align-items: center;
                 margin: 0 auto;
-                border-radius: 16px;
+                border-radius: 9px;
                 h1 {
                     display: none;
                 }
@@ -354,8 +354,6 @@ $color: #707070;
                 }
 
                 .text {
-                    // white-space: normal;
-                    // text-align: left;
                     width: 75%;
                 }
             }
@@ -388,6 +386,28 @@ $color: #707070;
 
         .customize-button {
             bottom: 100px;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .customize-top {
+            margin-top: 70px;
+            svg {
+                height: 270px;
+            }
+        }
+
+        .customize-bottom {
+            height: 30%;
+            margin-top: 50px;
+            margin-bottom: 70px;
+            div {
+                margin-top: 10px;
+
+                .text {
+                    width: 85%;
+                }
+            }
         }
     }
 }

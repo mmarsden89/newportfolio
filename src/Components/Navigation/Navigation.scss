@@ -258,5 +258,18 @@
 
     @media (max-width: 440px) {
         // display: none;
+        .navigation-subcontainer {
+            margin-right: 5px;
+            .colorwheel {
+                display: none;
+            }
+
+            .social-container {
+                justify-content: space-evenly;
+                .instagram-container {
+                    display: none;
+                }
+            }
+        }
     }
 }

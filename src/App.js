@@ -27,8 +27,6 @@ function App() {
     const [secondary, setSecondary] = useState("Sans serif");
     const [fontsBool, setFontsBool] = useState(false);
 
-    console.log("currentSlide--->", currentSlide);
-
     const handleNextSlide = () => {
         if (currentSlide < 5) {
             let copy = classArr;
@@ -37,9 +35,6 @@ function App() {
             setClassArr(copy);
             setCurrentSlide(currentSlide + 1);
             setColorRange(false);
-            if (currentSlide + 1 !== 2) {
-                setDay(false);
-            }
         }
     };
 
@@ -52,10 +47,6 @@ function App() {
             setClassArr(copy);
             setCurrentSlide(currentSlide - 1);
             setColorRange(false);
-
-            if (currentSlide - 1 !== 2) {
-                setDay(false);
-            }
         }
     };
 
@@ -94,8 +85,9 @@ function App() {
     let touchendX = 0;
 
     const checkDirection = () => {
-        if (touchendX < touchstartX) handleNextSlide();
-        if (touchendX > touchstartX) handlePreviousSlide();
+        const totalGreater = Math.abs(touchstartX - touchendX) > 75;
+        if (touchendX < touchstartX && totalGreater) handleNextSlide();
+        if (touchendX > touchstartX && totalGreater) handlePreviousSlide();
     };
 
     const touchStart = (e) => {

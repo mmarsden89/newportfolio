@@ -61,6 +61,16 @@ const Messaging = (props) => {
                         </>
                     </div>
                 )}
+                {currentSlide === 5 && (
+                    <div className="mobile-contact">
+                        <>
+                            <a href="mailto:mattmarsdendev@gmail.com">
+                                <img src={email} autoFocus />
+                            </a>
+                            <img src={linkedinicon} autoFocus />
+                        </>
+                    </div>
+                )}
             </div>
             <div className="wayfinder-container">
                 {currentSlide > 0 && (

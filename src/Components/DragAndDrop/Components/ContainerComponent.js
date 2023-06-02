@@ -1,6 +1,6 @@
 import React from "react";
 
-function ContainerComponent({ weather, className, theme, children }) {
+const ContainerComponent = ({ weather, className, theme, children }) => {
     const withProps = React.Children.map(children, (child) =>
         React.cloneElement(child, { weather })
     );
@@ -9,6 +9,6 @@ function ContainerComponent({ weather, className, theme, children }) {
             {withProps}
         </div>
     );
-}
+};
 
 export default ContainerComponent;

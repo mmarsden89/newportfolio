@@ -24,7 +24,7 @@ const Current = (props) => {
                     </p>
                 </div>
             </div>
-            <p>Current Conditions</p>
+            <p className="current-conditions-p">Current Conditions</p>
         </div>
     );
 };

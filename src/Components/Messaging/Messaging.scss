@@ -124,7 +124,8 @@
         display: none;
     }
 
-    .contact {
+    .contact,
+    .mobile-contact {
         width: 40%;
         display: flex;
         flex-direction: row;
@@ -156,6 +157,20 @@
         }
     }
 
+    .mobile-contact {
+        display: none;
+    }
+
+    @media (max-width: 1366px) {
+        .messaging {
+            top: 39.5%;
+
+            .sub-header {
+                margin-top: -15px;
+            }
+        }
+    }
+
     @media (max-width: 1200px) {
         .messaging {
             h1 {
@@ -178,6 +193,9 @@
     }
 
     @media (max-width: 440px) {
+        .messaging {
+            top: 37%;
+        }
         // display: none;
         .mobile-swipe {
             margin-top: 25px;
@@ -185,6 +203,27 @@
         }
         .wayfinder-container {
             display: none;
+        }
+        .contact {
+            display: none;
+        }
+        .mobile-contact {
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .messaging {
+            h1 {
+                font-size: 68px;
+            }
+            .sub-header {
+                margin-top: -10px;
+                h2 {
+                    font-size: 18px;
+                }
+            }
         }
     }
 }

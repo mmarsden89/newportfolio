@@ -12,7 +12,7 @@ const AirQuality = (props) => {
         "Hazardous",
     ];
     return (
-        <div className="icon">
+        <div className="icon air-quality">
             <div className="air-quality-container">
                 <div>
                     <img src={airquality} className="air-quality-img" />

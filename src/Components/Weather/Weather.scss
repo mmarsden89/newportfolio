@@ -11,7 +11,7 @@ $ltborder: #d2d2d7;
     src: url(../../Assets/Fonts/freebooter.ttf) format("opentype");
 }
 
-.day.dragdrop-container {
+.day.weather-parent-container {
     background: $ltbackground;
 
     .weather-hourly-container,
@@ -31,7 +31,7 @@ $ltborder: #d2d2d7;
     }
 }
 
-.night.dragdrop-container {
+.night.weather-parent-container {
     background: $background;
 
     .weather-hourly-container,
@@ -41,7 +41,7 @@ $ltborder: #d2d2d7;
     }
 }
 
-.dragdrop-container {
+.weather-parent-container {
     .theme-container {
         position: absolute;
         left: 15px;

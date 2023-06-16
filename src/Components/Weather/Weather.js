@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./DragAndDrop.scss";
+import "./Weather.scss";
 import axios from "axios";
 import apiUrl from "../../ApiConfig";
 import {
@@ -15,7 +15,7 @@ import {
 } from "./Components/_index.js";
 import dummyData from "./DummyData";
 
-const DragAndDrop = (props) => {
+const Weather = (props) => {
     const { className, zip, setTheme, day, renderMessage, setZip } = props;
     const [weather, setWeather] = useState(dummyData);
     const [hourly, setHourly] = useState(
@@ -74,4 +74,4 @@ const DragAndDrop = (props) => {
     );
 };
 
-export default DragAndDrop;
+export default Weather;

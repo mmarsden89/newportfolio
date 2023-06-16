@@ -5,7 +5,7 @@ const ContainerComponent = ({ weather, className, theme, children }) => {
         React.cloneElement(child, { weather })
     );
     return (
-        <div className={`dragdrop-container ${className + theme}`}>
+        <div className={`weather-parent-container ${className + theme}`}>
             {withProps}
         </div>
     );

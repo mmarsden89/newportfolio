@@ -1,5 +1,5 @@
 import Designer from "./Designer/Designer";
-import DragAndDrop from "./DragAndDrop/DragAndDrop";
+import Weather from "./Weather/Weather";
 import Messaging from "./Messaging/Messaging";
 import Navigation from "./Navigation/Navigation";
 import Welcome from "./Welcome/Welcome";
@@ -9,7 +9,7 @@ import Customize from "./Cutomize/Customize";
 
 export {
     Designer,
-    DragAndDrop,
+    Weather,
     Messaging,
     Navigation,
     Welcome,

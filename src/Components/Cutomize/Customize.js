@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
     ABSVG,
     Card,
@@ -9,6 +9,23 @@ import {
 } from "./Components/_index";
 import "./Customize.scss";
 import colors from "./colors";
+import { Reorder } from "framer-motion/dist/framer-motion";
+// import { useState } from "react";
+
+// function List() {
+//   const [items, setItems] = useState([0, 1, 2, 3])
+
+//   return (
+//     <Reorder.Group axis="y" values={items} onReorder={setItems}>
+//       {items.map((item) => (
+//         <Reorder.Item key={item} value={item}>
+//           {item}
+//         </Reorder.Item>
+//       ))}
+//     </Reorder.Group>
+//   )
+// }
+
 const Customize = (props) => {
     const {
         renderMessage,
@@ -28,6 +45,44 @@ const Customize = (props) => {
     const [secondaryColor, setSecondaryColor] = useState("#f3bd05");
     const [accentColor, setAccentColor] = useState("#707070");
     const [textColor, setTextColor] = useState("#e6dc75");
+    const [initialItems, setInitialItems] = useState([
+        <Card
+            primaryColor={primaryColor}
+            accentColor={accentColor}
+            secondaryColor={secondaryColor}
+            textColor={textColor}
+            secondary={secondary}
+            heading="Front End Development"
+            body="Three years of experience developing full-stack applications with a focus on the front-end"
+            svg={<FrontEndSVG secondaryColor={secondaryColor} />}
+            id={1}
+        />,
+        <Card
+            primaryColor={primaryColor}
+            accentColor={accentColor}
+            secondaryColor={secondaryColor}
+            textColor={textColor}
+            secondary={secondary}
+            heading="Custom Code Solutions"
+            body="Scalable custom coding solutions for a variety of
+        Content Management Systems"
+            svg={<CustomSVG secondaryColor={secondaryColor} />}
+            id={2}
+        />,
+        <Card
+            primaryColor={primaryColor}
+            accentColor={accentColor}
+            secondaryColor={secondaryColor}
+            textColor={textColor}
+            secondary={secondary}
+            heading="A/B Testing"
+            body="Hundreds of successful A/B experiments run on household
+    name's products"
+            svg={<ABSVG secondaryColor={secondaryColor} />}
+            id={3}
+        />,
+    ]);
+    const [items, setItems] = useState(initialItems);
 
     const handleChange = (e) => {
         setBackgroundColor(e.target.value);
@@ -51,6 +106,8 @@ const Customize = (props) => {
     const handleLabelClick = (e) => {
         e.target.parentElement.children[0].click();
     };
+
+    console.log("hiiiii");
 
     const getRandomColor = () => {
         var letters = "0123456789ABCDEF".split("");
@@ -127,8 +184,20 @@ const Customize = (props) => {
                     textColor={textColor}
                 />
             </div>
-            <div className="customize-bottom">
-                <Card
+            {/* <div className="customize-bottom"> */}
+            <Reorder.Group
+                axis="x"
+                values={items}
+                onReorder={setItems}
+                className="customize-bottom"
+            >
+                {items.map((item) => (
+                    <Reorder.Item key={item.id} value={item}>
+                        {item}
+                    </Reorder.Item>
+                ))}
+            </Reorder.Group>
+            {/* <Card
                     primaryColor={primaryColor}
                     accentColor={accentColor}
                     secondaryColor={secondaryColor}
@@ -137,8 +206,8 @@ const Customize = (props) => {
                     heading="Front End Development"
                     body="Three years of experience developing full-stack applications with a focus on the front-end"
                     svg={<FrontEndSVG secondaryColor={secondaryColor} />}
-                />
-                <Card
+                /> */}
+            {/* <Card
                     primaryColor={primaryColor}
                     accentColor={accentColor}
                     secondaryColor={secondaryColor}
@@ -148,8 +217,8 @@ const Customize = (props) => {
                     body="Scalable custom coding solutions for a variety of
                     Content Management Systems"
                     svg={<CustomSVG secondaryColor={secondaryColor} />}
-                />
-                <Card
+                /> */}
+            {/* <Card
                     primaryColor={primaryColor}
                     accentColor={accentColor}
                     secondaryColor={secondaryColor}
@@ -159,8 +228,8 @@ const Customize = (props) => {
                     body="Hundreds of successful A/B experiments run on household
                 name's products"
                     svg={<ABSVG secondaryColor={secondaryColor} />}
-                />
-            </div>
+                /> */}
+            {/* </div> */}
             <div
                 className={`customize-button ${toolbar ? "hidden" : ""}`}
                 onClick={displayToolbar}

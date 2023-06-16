@@ -6,7 +6,7 @@ import {
     WorkForYou,
     Messaging,
     Navigation,
-    DragAndDrop,
+    Weather,
     DisplayInfo,
     Customize,
 } from "./Components/_index";
@@ -107,7 +107,7 @@ function App() {
         >
             <WorkForYou />
             <Developer className={classArr[4]} />
-            <DragAndDrop
+            <Weather
                 className={classArr[3]}
                 zip={zip}
                 day={day}

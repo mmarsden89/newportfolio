@@ -1,58 +1,25 @@
 import React from "react";
 import "./Developer.scss";
 import Wave from "./Wave/Wave";
-import {
-    exploremars,
-    mountainview,
-    designbox,
-    rainbow,
-    moderndesign,
-    donuts,
-    designconcept,
-    moderndesign3,
-    headphones,
-} from "../../Assets/Images/_index";
 
 const Developer = (props) => {
-    const { className } = props;
-    const handleClick = () => {
-        console.log("clicked");
-    };
+    const { className, imageOrder } = props;
 
     return (
         <div className={`developer-container ${className}`}>
             <div className="row-1">
-                <Wave handleClick={handleClick} />
-                <div className="image">
-                    <img src={headphones} />
-                </div>
-                <div className="image">
-                    <img src={designbox} />
-                </div>
-                <div className="image">
-                    <img src={rainbow} />
-                </div>
-                <div className="image">
-                    <img src={moderndesign} />
-                </div>
+                {imageOrder.slice(0, 5).map((item) => (
+                    <div className="image">
+                        <img src={item} />
+                    </div>
+                ))}
             </div>
             <div className="row-2">
-                <div className="image">
-                    <img src={exploremars} />
-                </div>
-
-                <div className="image">
-                    <img src={mountainview} />
-                </div>
-                <div className="image">
-                    <img src={donuts} />
-                </div>
-                <div className="image">
-                    <img src={designconcept} />
-                </div>
-                <div className="image">
-                    <img src={moderndesign3} />
-                </div>
+                {imageOrder.slice(5, 10).map((item) => (
+                    <div className="image">
+                        <img src={item} />
+                    </div>
+                ))}
             </div>
             <div className="overlay"></div>
             <div className="nav-bar"></div>

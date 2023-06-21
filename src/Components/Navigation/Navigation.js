@@ -22,6 +22,7 @@ const Navigation = (props) => {
         handleZipCode,
         day,
         renderMessage,
+        randomize,
     } = props;
 
     useEffect(() => {}, [currentSlide]);
@@ -111,7 +112,11 @@ const Navigation = (props) => {
                     </div>
                 )}
 
-                {currentSlide === 4 && <div className="nav-link"></div>}
+                {currentSlide === 4 && (
+                    <div className="nav-link" onClick={randomize}>
+                        randomize
+                    </div>
+                )}
 
                 {currentSlide === 5 && (
                     <div className="nav-link social-container">

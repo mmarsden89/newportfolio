@@ -11,6 +11,18 @@ import {
     Customize,
 } from "./Components/_index";
 import Developer from "./Components/Developer/Developer";
+import {
+    exploremars,
+    mountainview,
+    designbox,
+    rainbow,
+    moderndesign,
+    donuts,
+    designconcept,
+    moderndesign3,
+    headphones,
+    poster,
+} from "./Assets/Images/_index";
 
 function App() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -26,6 +38,18 @@ function App() {
     const [primary, setPrimary] = useState("Augillion");
     const [secondary, setSecondary] = useState("Sans serif");
     const [fontsBool, setFontsBool] = useState(false);
+    const [imageOrder, setImageOrder] = useState([
+        exploremars,
+        mountainview,
+        designbox,
+        rainbow,
+        moderndesign,
+        donuts,
+        designconcept,
+        moderndesign3,
+        headphones,
+        poster,
+    ]);
 
     const handleNextSlide = () => {
         if (currentSlide < 5) {
@@ -99,6 +123,15 @@ function App() {
         checkDirection();
     };
 
+    const randomize = () => {
+        const shuffled = imageOrder
+            .map((value) => ({ value, sort: Math.random() }))
+            .sort((a, b) => a.sort - b.sort)
+            .map(({ value }) => value);
+
+        setImageOrder(shuffled);
+    };
+
     return (
         <div
             className="App"
@@ -106,7 +139,7 @@ function App() {
             onTouchEnd={(e) => touchEnd(e)}
         >
             <WorkForYou />
-            <Developer className={classArr[4]} />
+            <Developer className={classArr[4]} imageOrder={imageOrder} />
             <Weather
                 className={classArr[3]}
                 zip={zip}
@@ -151,6 +184,7 @@ function App() {
                 handleZipCode={handleZipCode}
                 day={day}
                 renderMessage={renderMessage}
+                randomize={randomize}
             />
             <DisplayInfo
                 displayMessage={displayMessage}

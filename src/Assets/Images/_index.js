@@ -22,6 +22,7 @@ import donuts from "./donuts.png";
 import designconcept from "./designconcept.png";
 import moderndesign3 from "./moderndesign3.png";
 import designboxanimated from "./designboxanimated.gif";
+import poster from "./poster.png";
 
 export {
     airquality,
@@ -48,4 +49,5 @@ export {
     designconcept,
     moderndesign3,
     designboxanimated,
+    poster,
 };

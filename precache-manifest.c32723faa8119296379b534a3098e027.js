@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "7fca03e6906a91ab67e5",
+    "revision": "1b49966bae890f0f36a8",
     "url": "/newportfolio/static/css/main.2db68633.chunk.css"
   },
   {
-    "revision": "7fca03e6906a91ab67e5",
-    "url": "/newportfolio/static/js/main.46f8c1aa.chunk.js"
+    "revision": "1b49966bae890f0f36a8",
+    "url": "/newportfolio/static/js/main.09ab32d2.chunk.js"
   },
   {
     "revision": "d218e58ddb347be191bd",
     "url": "/newportfolio/static/js/runtime~main.a4cd848d.js"
   },
   {
-    "revision": "f682266c4a2de97c2df7",
-    "url": "/newportfolio/static/js/2.27204f97.chunk.js"
+    "revision": "ba90eec424972918f0da",
+    "url": "/newportfolio/static/js/2.05771413.chunk.js"
   },
   {
     "revision": "2f6110f28478fa8870ab",
@@ -96,7 +96,7 @@ self.__precacheManifest = [
     "url": "/newportfolio/static/media/Augillion.d6b4e82f.otf"
   },
   {
-    "revision": "dfb735a0bd63d246174138ba760313bd",
+    "revision": "a49115133a6ad54608f64139bffc9d73",
     "url": "/newportfolio/index.html"
   }
 ];

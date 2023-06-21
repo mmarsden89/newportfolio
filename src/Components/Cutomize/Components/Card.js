@@ -1,4 +1,5 @@
 import React from "react";
+import { Reorder } from "framer-motion/dist/framer-motion";
 
 const Card = (props) => {
     const {
@@ -9,9 +10,17 @@ const Card = (props) => {
         textColor,
         svg,
         secondary,
+        key,
+        item,
+        idee,
     } = props;
     return (
-        <div style={{ backgroundColor: primaryColor }}>
+        <Reorder.Item
+            style={{ backgroundColor: primaryColor }}
+            id={idee}
+            value={item}
+            className="card"
+        >
             <h1 style={{ color: accentColor, fontFamily: secondary }}>
                 {heading}
             </h1>
@@ -22,7 +31,7 @@ const Card = (props) => {
             >
                 {body}
             </p>
-        </div>
+        </Reorder.Item>
     );
 };
 

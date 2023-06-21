@@ -45,43 +45,41 @@ const Customize = (props) => {
     const [secondaryColor, setSecondaryColor] = useState("#f3bd05");
     const [accentColor, setAccentColor] = useState("#707070");
     const [textColor, setTextColor] = useState("#e6dc75");
-    const [initialItems, setInitialItems] = useState([
-        <Card
-            primaryColor={primaryColor}
-            accentColor={accentColor}
-            secondaryColor={secondaryColor}
-            textColor={textColor}
-            secondary={secondary}
-            heading="Front End Development"
-            body="Three years of experience developing full-stack applications with a focus on the front-end"
-            svg={<FrontEndSVG secondaryColor={secondaryColor} />}
-            id={1}
-        />,
-        <Card
-            primaryColor={primaryColor}
-            accentColor={accentColor}
-            secondaryColor={secondaryColor}
-            textColor={textColor}
-            secondary={secondary}
-            heading="Custom Code Solutions"
-            body="Scalable custom coding solutions for a variety of
-        Content Management Systems"
-            svg={<CustomSVG secondaryColor={secondaryColor} />}
-            id={2}
-        />,
-        <Card
-            primaryColor={primaryColor}
-            accentColor={accentColor}
-            secondaryColor={secondaryColor}
-            textColor={textColor}
-            secondary={secondary}
-            heading="A/B Testing"
-            body="Hundreds of successful A/B experiments run on household
-    name's products"
-            svg={<ABSVG secondaryColor={secondaryColor} />}
-            id={3}
-        />,
-    ]);
+    const initialItems = [
+        {
+            primaryColor: primaryColor,
+            accentColor: accentColor,
+            secondaryColor: secondaryColor,
+            textColor: textColor,
+            secondary: secondary,
+            heading: "Front End Development",
+            body: "Three years of experience developing full-stack applications with a focus on the front-end",
+            // svg: <FrontEndSVG secondaryColor={secondaryColor />,
+            idee: "tomato",
+        },
+        {
+            primaryColor: primaryColor,
+            accentColor: accentColor,
+            secondaryColor: secondaryColor,
+            textColor: textColor,
+            secondary: secondary,
+            heading: "Custom Code Solutions",
+            body: "Scalable custom coding solutions for a variety of Content Management Systems",
+            // svg={<CustomSVG secondaryColor={secondaryColor} />}
+            idee: "carrot",
+        },
+        {
+            primaryColor: primaryColor,
+            accentColor: accentColor,
+            secondaryColor: secondaryColor,
+            textColor: textColor,
+            secondary: secondary,
+            heading: "A/B Testing",
+            body: "Hundreds of successful A/B experiments run on household name's products",
+            // svg={<ABSVG secondaryColor={secondaryColor} />}
+            idee: "snap",
+        },
+    ];
     const [items, setItems] = useState(initialItems);
 
     const handleChange = (e) => {
@@ -192,9 +190,14 @@ const Customize = (props) => {
                 className="customize-bottom"
             >
                 {items.map((item) => (
-                    <Reorder.Item key={item.id} value={item}>
-                        {item}
-                    </Reorder.Item>
+                    <Card
+                        body={item.body}
+                        primaryColor={item.primaryColor}
+                        heading={item.heading}
+                        key={item.id}
+                        item={item}
+                        idee={item.idee}
+                    />
                 ))}
             </Reorder.Group>
             {/* <Card

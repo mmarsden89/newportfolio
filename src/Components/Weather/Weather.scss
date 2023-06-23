@@ -251,7 +251,7 @@ $ltborder: #d2d2d7;
             display: flex;
             flex-direction: row;
             align-items: center;
-            width: 76%;
+            width: 100%;
             justify-content: space-evenly;
 
             div:first-child {
@@ -336,6 +336,13 @@ $ltborder: #d2d2d7;
                     }
                 }
             }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .min-max-container {
+            width: 76%;
+            display: none;
         }
     }
 

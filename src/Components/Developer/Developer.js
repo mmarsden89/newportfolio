@@ -8,14 +8,7 @@ const Developer = (props) => {
     return (
         <div className={`developer-container ${className}`}>
             <div className="row-1">
-                {imageOrder.slice(0, 5).map((item) => (
-                    <div className="image">
-                        <img src={item} />
-                    </div>
-                ))}
-            </div>
-            <div className="row-2">
-                {imageOrder.slice(5, 10).map((item) => (
+                {imageOrder.map((item) => (
                     <div className="image">
                         <img src={item} />
                     </div>

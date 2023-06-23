@@ -113,7 +113,7 @@ const Navigation = (props) => {
                 )}
 
                 {currentSlide === 4 && (
-                    <div className="nav-link" onClick={randomize}>
+                    <div className="nav-link randomize" onClick={randomize}>
                         randomize
                     </div>
                 )}

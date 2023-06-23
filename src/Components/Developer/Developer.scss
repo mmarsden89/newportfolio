@@ -21,34 +21,28 @@
         opacity: 0.9;
     }
 
-    .row-1,
-    .row-2 {
+    .row-1 {
         z-index: 0;
         height: 100%;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 1%;
-        transform: rotate(-10deg) scale(1.1) translateX(-100px)
-            translateY(-200px);
+        transform: rotate(-10deg) scale(1.1) translateX(-100px);
 
         &:first-child {
-            transform: rotate(-10deg) translateX(00px) scale(1.1)
-                translateY(-75px);
+            transform: rotate(-10deg) translateX(00px) scale(1.1);
         }
-        &:nth-child(2) {
-            transform: rotate(-10deg) scale(1.1) translateX(5%)
-                translateY(-25px);
-        }
+
         div {
             transition: 0.5s;
         }
         .image {
-            width: 100%;
-            margin: 0 10px;
+            // width: 100%;
+            width: 275px;
             // overflow-y: hidden;
             img {
                 width: 100%;
-                height: 100%;
+                // height: 100%;
                 border-radius: 15px;
             }
         }
@@ -65,43 +59,29 @@
         // display: none;
     }
 
+    @media (max-width: 600px) {
+        .row-1 {
+            .image {
+                width: 225px;
+            }
+        }
+    }
+
     @media (max-width: 440px) {
         // display: none;
         align-items: end;
 
-        .row-1,
-        .row-2 {
-            height: 50% !important;
-            width: 150%;
-            grid-template-columns: repeat(5, 21%) !important;
-
+        .row-1 {
             .image {
+                width: 200px;
                 img {
                     border-radius: 9px !important;
-                    width: 100% !important;
+                    // width: 100% !important;
                 }
             }
-        }
-
-        .row-1 {
-            transform: scale(1.7) rotate(-10deg) translatex(-215px)
-                translateY(-50px) !important;
-        }
-
-        .row-2 {
-            transform: scale(1.7) rotate(-10deg) translatex(-172px)
-                translateY(-75px) !important;
         }
     }
 
     @media (max-width: 375px) {
-        .row-1 {
-            transform: scale(1.5) rotate(-10deg) translatex(-210px)
-                translateY(-45px) !important;
-        }
-        .row-2 {
-            transform: scale(1.5) rotate(-10deg) translatex(-172px)
-                translateY(-75px) !important;
-        }
     }
 }

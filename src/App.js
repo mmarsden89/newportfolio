@@ -1,5 +1,6 @@
 import "./App.scss";
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
     Welcome,
     Designer,
@@ -23,13 +24,21 @@ import {
     headphones,
     poster,
 } from "./Assets/Images/_index";
+import { decrement, increment } from "./Redux/currentSlideSlice";
+import { replace } from "./Redux/slideArraySlice";
+import { replaceColorValue } from "./Redux/colorValueSlice";
+import { setColorRangeBool } from "./Redux/colorRangeBoolSlice";
+import { setZipcode } from "./Redux/zipcodeSlice";
 
 function App() {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [classArr, setClassArr] = useState(["", "", "", "", ""]);
-    const [value, setValue] = useState(0);
-    const [colorRange, setColorRange] = useState(false);
-    const [zip, setZip] = useState("02144");
+    const dispatch = useDispatch();
+    const { currentSlide } = useSelector((state) => state.currentSlide);
+    const { slideArray } = useSelector((state) => state.slideArray);
+    const { colorValue } = useSelector((state) => state.colorValue);
+    const { colorRangeBool } = useSelector((state) => state.colorRangeBool);
+    // const { zipcode } = useSelector((state) => state.zipcode);
+
+    // const [zip, setZip] = useState("02144");
     const [day, setDay] = useState(false);
     const [displayMessage, setDisplayMessage] = useState("");
     const [showMessage, setShowMessage] = useState(false);
@@ -53,35 +62,35 @@ function App() {
 
     const handleNextSlide = () => {
         if (currentSlide < 5) {
-            let copy = classArr;
+            let copy = [...slideArray];
             copy[currentSlide] = "move-left";
-            setValue(0);
-            setClassArr(copy);
-            setCurrentSlide(currentSlide + 1);
-            setColorRange(false);
+            dispatch(replaceColorValue(0));
+            dispatch(replace(copy));
+            dispatch(increment());
+            dispatch(setColorRangeBool(false));
         }
     };
 
     const handlePreviousSlide = () => {
-        console.log("current slide", currentSlide);
         if (currentSlide > 0) {
-            let copy = classArr;
+            let copy = [...slideArray];
             copy[currentSlide - 1] = "";
-            setValue(0);
-            setClassArr(copy);
-            setCurrentSlide(currentSlide - 1);
-            setColorRange(false);
+            dispatch(replaceColorValue(0));
+            dispatch(replace(copy));
+            dispatch(decrement());
+            dispatch(setColorRangeBool(false));
         }
     };
 
     const handleColorRange = () => {
-        setColorRange(!colorRange);
-        setValue(0);
+        dispatch(setColorRangeBool(!colorRangeBool));
+        dispatch(replaceColorValue(0));
     };
 
     const handleZipCode = (e) => {
+        console.log("handlezipcode", e.target.value);
         e.preventDefault();
-        setZip(e.target.value);
+        setZipcode(e.target.value);
     };
 
     const setTheme = () => {
@@ -132,25 +141,32 @@ function App() {
         setImageOrder(shuffled);
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === "ArrowRight") {
+            handleNextSlide();
+        } else if (e.key === "ArrowLeft") {
+            handlePreviousSlide();
+        }
+    };
+
     return (
         <div
             className="App"
             onTouchStart={(e) => touchStart(e)}
             onTouchEnd={(e) => touchEnd(e)}
+            onKeyDown={handleKeyDown}
+            tabIndex="0"
         >
             <WorkForYou />
-            <Developer className={classArr[4]} imageOrder={imageOrder} />
+            <Developer className={slideArray[4]} imageOrder={imageOrder} />
             <Weather
-                className={classArr[3]}
-                zip={zip}
+                className={slideArray[3]}
                 day={day}
                 setTheme={setTheme}
                 renderMessage={renderMessage}
-                currentslide={currentSlide}
-                setZip={setZip}
             />
             <Customize
-                className={classArr[2]}
+                className={slideArray[2]}
                 renderMessage={renderMessage}
                 toolbar={toolbar}
                 displayToolbar={displayToolbar}
@@ -162,10 +178,9 @@ function App() {
                 displayFonts={displayFonts}
                 setFontsBool={setFontsBool}
             />
-            <Designer className={classArr[1]} style={value} />
-            <Welcome className={classArr[0]} style={value} />
+            <Designer className={slideArray[1]} style={colorValue} />
+            <Welcome className={slideArray[0]} style={colorValue} />
             <Messaging
-                currentSlide={currentSlide}
                 handleNextSlide={handleNextSlide}
                 handlePreviousSlide={handlePreviousSlide}
                 day={day}
@@ -174,13 +189,7 @@ function App() {
                 secondary={secondary}
             />
             <Navigation
-                currentSlide={currentSlide}
-                setCurrentSlide={setCurrentSlide}
-                setClassArr={setClassArr}
-                setValue={setValue}
-                value={value}
                 handleColorRange={handleColorRange}
-                colorRange={colorRange}
                 handleZipCode={handleZipCode}
                 day={day}
                 renderMessage={renderMessage}

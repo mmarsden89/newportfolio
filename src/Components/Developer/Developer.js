@@ -1,6 +1,5 @@
 import React from "react";
 import "./Developer.scss";
-import Wave from "./Wave/Wave";
 
 const Developer = (props) => {
     const { className, imageOrder } = props;

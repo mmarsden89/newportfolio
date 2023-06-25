@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import differentSlides from "./Slides";
 import "./Messaging.scss";
 import { email, linkedinicon, codepen } from "../../Assets/Images/_index";
+import { useSelector } from "react-redux";
 
 const Messaging = (props) => {
     const {
         handlePreviousSlide,
         handleNextSlide,
-        currentSlide,
         day,
         renderMessage,
         primary,
         secondary,
     } = props;
 
-    useEffect(() => {}, [currentSlide]);
+    // useEffect(() => {}, [currentSlide]);
+    const { currentSlide } = useSelector((state) => state.currentSlide);
 
     const handleClick = () => {
         navigator.clipboard.writeText("mattmarsdendev@gmail.com");

@@ -5,7 +5,7 @@ import Navigation from "./Navigation/Navigation";
 import Welcome from "./Welcome/Welcome";
 import WorkForYou from "./WorkForYou/WorkForYou";
 import DisplayInfo from "./DisplayInfo/DisplayInfo";
-import Customize from "./Cutomize/Customize";
+import Customize from "./Customize/Customize";
 
 export {
     Designer,

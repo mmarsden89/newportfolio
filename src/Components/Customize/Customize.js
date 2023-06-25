@@ -9,7 +9,6 @@ import {
 } from "./Components/_index";
 import "./Customize.scss";
 import colors from "./colors";
-import { Reorder } from "framer-motion/dist/framer-motion";
 // import { useState } from "react";
 
 // function List() {

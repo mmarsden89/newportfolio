@@ -14,19 +14,23 @@ import {
     Theme,
 } from "./Components/_index.js";
 import dummyData from "./DummyData";
+import { useDispatch, useSelector } from "react-redux";
+import { setZipcode } from "../../Redux/zipcodeSlice";
 
 const Weather = (props) => {
-    const { className, zip, setTheme, day, renderMessage, setZip } = props;
+    const dispatch = useDispatch();
+    const { className, setTheme, day, renderMessage } = props;
+    const { zipcode } = useSelector((state) => state.zipcode);
     const [weather, setWeather] = useState(dummyData);
     const [hourly, setHourly] = useState(
         dummyData.forecast.forecastday[0].hour
     );
 
     const getWeather = async () => {
-        const getWeather = await axios(`${apiUrl}/weather?zip=${zip}`);
+        const getWeather = await axios(`${apiUrl}/weather?zip=${zipcode}`);
         if (getWeather.data.error) {
             renderMessage("Invalid zipcode. Please try again", false);
-            setZip("02144");
+            dispatch(setZipcode("02144"));
             return;
         }
         setWeather(getWeather.data);
@@ -41,17 +45,14 @@ const Weather = (props) => {
         );
         const hourlyData = today.concat(tomorrow);
 
-        console.log(today, tomorrow, hourlyData);
         setHourly(
             hourlyData.filter((item) => new Date(item.time) > new Date())
         );
-
-        console.log(getWeather);
     };
 
     useEffect(() => {
         getWeather();
-    }, [zip]);
+    }, [zipcode]);
 
     return (
         <ContainerComponent

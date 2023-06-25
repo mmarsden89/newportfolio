@@ -6,30 +6,28 @@ import {
     linkedinicon,
 } from "../../Assets/Images/_index";
 import Instagram from "./Instagram";
+import { useDispatch, useSelector } from "react-redux";
+import { makeZero } from "../../Redux/currentSlideSlice";
+import { replace } from "../../Redux/slideArraySlice";
+import { replaceColorValue } from "../../Redux/colorValueSlice";
+import { setZipcode } from "../../Redux/zipcodeSlice";
 
 const Navigation = (props) => {
+    const dispatch = useDispatch();
+    const { colorValue } = useSelector((state) => state.colorValue);
+    const { zipcode } = useSelector((state) => state.zipcode);
+    const { colorRangeBool } = useSelector((state) => state.colorRangeBool);
     const [editZip, setEditZip] = useState(false);
-    const [zip, setZip] = useState("02144");
     const [newZip, setNewZip] = useState("");
-    const {
-        currentSlide,
-        setCurrentSlide,
-        setClassArr,
-        setValue,
-        value,
-        handleColorRange,
-        colorRange,
-        handleZipCode,
-        day,
-        renderMessage,
-        randomize,
-    } = props;
+    const { handleColorRange, handleZipCode, day, renderMessage, randomize } =
+        props;
 
     useEffect(() => {}, [currentSlide]);
+    const { currentSlide } = useSelector((state) => state.currentSlide);
 
     const handleHome = () => {
-        setCurrentSlide(0);
-        setClassArr(["", "", "", ""]);
+        dispatch(makeZero());
+        dispatch(replace(["", "", "", "", ""]));
     };
 
     const handleChangeZip = () => {
@@ -37,9 +35,10 @@ const Navigation = (props) => {
     };
 
     const handleZip = (e) => {
+        console.log(e.target.value);
         if (e.target.value.length < 6) {
             setNewZip(e.target.value);
-            setZip(e.target.value);
+            dispatch(setZipcode(e.target.value));
         }
     };
 
@@ -63,7 +62,7 @@ const Navigation = (props) => {
                 <div className="resume nav-link">
                     <div className="nav">resume</div>
                 </div>
-                {!colorRange && currentSlide < 2 && (
+                {!colorRangeBool && currentSlide < 2 && (
                     <div className="nav-link cw">
                         <img
                             src={colorwheelicon}
@@ -72,14 +71,18 @@ const Navigation = (props) => {
                         />
                     </div>
                 )}
-                {colorRange && (
+                {colorRangeBool && (
                     <div className="popup nav-link">
                         <input
                             type="range"
                             min="0"
                             max={360}
-                            onChange={(e) => setValue(e.target.value)}
-                            value={value}
+                            onChange={(e) =>
+                                dispatch(replaceColorValue(e.target.value))
+                            }
+                            // value={colorValue}
+                            // onChange={handleChange}
+                            value={colorValue}
                         />
                         <div onClick={handleColorRange}>x</div>
                     </div>
@@ -104,7 +107,7 @@ const Navigation = (props) => {
                                 value={newZip}
                                 autoFocus
                             />
-                            <button onClick={submitZip} value={zip}>
+                            <button onClick={submitZip} value={zipcode}>
                                 ✓
                             </button>
                             <button onClick={handleCancel}>✕</button>

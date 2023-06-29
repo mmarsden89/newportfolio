@@ -1,11 +1,11 @@
 const slideOne = [
-    "a creative developer who loves to build",
+    "a frontend developer who loves to build",
     "aesthetic solutions that captivate users",
 ];
 
 const slideTwo = [
-    "a designer who loves to construct",
-    "solutions that grabs a user's attention",
+    "a detail orientated designer who loves",
+    "designs that grab a user's attention",
 ];
 
 const slideThree = [

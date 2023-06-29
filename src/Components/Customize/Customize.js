@@ -9,21 +9,6 @@ import {
 } from "./Components/_index";
 import "./Customize.scss";
 import colors from "./colors";
-// import { useState } from "react";
-
-// function List() {
-//   const [items, setItems] = useState([0, 1, 2, 3])
-
-//   return (
-//     <Reorder.Group axis="y" values={items} onReorder={setItems}>
-//       {items.map((item) => (
-//         <Reorder.Item key={item} value={item}>
-//           {item}
-//         </Reorder.Item>
-//       ))}
-//     </Reorder.Group>
-//   )
-// }
 
 const Customize = (props) => {
     const {
@@ -104,17 +89,6 @@ const Customize = (props) => {
 
     const handleLabelClick = (e) => {
         e.target.parentElement.children[0].click();
-    };
-
-    console.log("hiiiii");
-
-    const getRandomColor = () => {
-        var letters = "0123456789ABCDEF".split("");
-        var color = "#";
-        for (var i = 0; i < 6; i++) {
-            color += letters[Math.round(Math.random() * 15)];
-        }
-        return color;
     };
 
     const randomize = () => {

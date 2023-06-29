@@ -47,6 +47,8 @@ function App() {
     const [primary, setPrimary] = useState("Augillion");
     const [secondary, setSecondary] = useState("Sans serif");
     const [fontsBool, setFontsBool] = useState(false);
+    const [shuffleBool, setShuffleBool] = useState(false);
+    const [scrollTimeStamp, setScrollTimeStamp] = useState(0);
     const [imageOrder, setImageOrder] = useState([
         exploremars,
         mountainview,
@@ -64,10 +66,11 @@ function App() {
         if (currentSlide < 5) {
             let copy = [...slideArray];
             copy[currentSlide] = "move-left";
-            dispatch(replaceColorValue(0));
             dispatch(replace(copy));
             dispatch(increment());
-            dispatch(setColorRangeBool(false));
+            if (currentSlide >= 1) {
+                dispatch(setColorRangeBool(false));
+            }
         }
     };
 
@@ -75,10 +78,9 @@ function App() {
         if (currentSlide > 0) {
             let copy = [...slideArray];
             copy[currentSlide - 1] = "";
-            dispatch(replaceColorValue(0));
             dispatch(replace(copy));
             dispatch(decrement());
-            dispatch(setColorRangeBool(false));
+            // dispatch(setColorRangeBool(false));
         }
     };
 
@@ -124,6 +126,7 @@ function App() {
     };
 
     const touchStart = (e) => {
+        console.dir(e);
         touchstartX = e.changedTouches[0].screenX;
     };
 
@@ -133,12 +136,16 @@ function App() {
     };
 
     const randomize = () => {
+        setShuffleBool(true);
         const shuffled = imageOrder
             .map((value) => ({ value, sort: Math.random() }))
             .sort((a, b) => a.sort - b.sort)
             .map(({ value }) => value);
 
         setImageOrder(shuffled);
+        setTimeout(() => {
+            setShuffleBool(false);
+        }, 1000);
     };
 
     const handleKeyDown = (e) => {
@@ -158,7 +165,11 @@ function App() {
             tabIndex="0"
         >
             <WorkForYou />
-            <Developer className={slideArray[4]} imageOrder={imageOrder} />
+            <Developer
+                className={slideArray[4]}
+                imageOrder={imageOrder}
+                shuffleBool={shuffleBool}
+            />
             <Weather
                 className={slideArray[3]}
                 day={day}

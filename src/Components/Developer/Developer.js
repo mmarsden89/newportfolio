@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Developer.scss";
 
 const Developer = (props) => {
-    const { className, imageOrder } = props;
+    const { className, imageOrder, shuffleBool } = props;
+
+    useEffect(() => {}, [imageOrder]);
 
     return (
         <div className={`developer-container ${className}`}>
             <div className="row-1">
-                {imageOrder.map((item) => (
-                    <div className="image">
+                {imageOrder.map((item, idx) => (
+                    <div
+                        className={`${shuffleBool ? "shuffle" : ""} image`}
+                        key={idx}
+                    >
                         <img src={item} />
                     </div>
                 ))}

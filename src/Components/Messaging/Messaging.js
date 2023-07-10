@@ -102,7 +102,7 @@ const Messaging = (props) => {
                         </svg>
                     </div>
                 )}
-                {currentSlide < 5 && (
+                {currentSlide < 4 && (
                     <div onClick={handleNextSlide} className="right">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

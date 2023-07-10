@@ -1,0 +1,91 @@
+.animation {
+    width: 100vw;
+    height: 100vh;
+    background: skyblue;
+    z-index: 105;
+    position: absolute;
+
+    .hello {
+        display: none;
+    }
+}
+
+.animation-container {
+    z-index: 105;
+    background: skyblue;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+
+    .hello {
+        text-align: left;
+        left: 15px;
+        .h1 {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            overflow: hidden;
+            top: 30%;
+            left: 5%;
+            animation: 2s hiHeight linear;
+
+            @keyframes hiHeight {
+                0% {
+                    height: 10px;
+                    transform: translateX(25px);
+                }
+
+                50% {
+                    transform: translateX(25px);
+                }
+                85% {
+                }
+                100% {
+                    height: 100px;
+                    transform: translateX(0px);
+                }
+            }
+            h1 {
+                font-size: 100px;
+                font-family: Augillion;
+                font-weight: 500;
+                margin: 0;
+            }
+        }
+        .h2 {
+            position: absolute;
+            width: 500px;
+            height: 100px;
+            overflow: hidden;
+            top: 42%;
+            left: 5%;
+            animation: 2s hiHeight linear;
+            h2 {
+                font-size: 100px;
+                font-family: Augillion;
+                font-weight: 500;
+                margin: 0;
+            }
+        }
+    }
+
+    .rocket {
+        height: 200px;
+        width: 150px;
+        position: absolute;
+        right: 50px;
+        bottom: -20vh;
+
+        animation: 3s rocket linear;
+
+        @keyframes rocket {
+            0% {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-120vh);
+            }
+        }
+    }
+}

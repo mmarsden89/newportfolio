@@ -19,22 +19,10 @@ const slideFour = [
 ];
 
 const slideFive = [
-    "a creative developer with experience",
-    "working on a variety of projects",
-];
-
-const slideSix = [
     "and I want to work with you",
     "----------------------------",
 ];
 
-const differentSlides = [
-    slideOne,
-    slideTwo,
-    slideThree,
-    slideFour,
-    slideFive,
-    slideSix,
-];
+const differentSlides = [slideOne, slideTwo, slideThree, slideFour, slideFive];
 
 export default differentSlides;

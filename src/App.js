@@ -10,6 +10,7 @@ import {
     Weather,
     DisplayInfo,
     Customize,
+    Animation,
 } from "./Components/_index";
 import Developer from "./Components/Developer/Developer";
 import {
@@ -47,23 +48,10 @@ function App() {
     const [primary, setPrimary] = useState("Augillion");
     const [secondary, setSecondary] = useState("Sans serif");
     const [fontsBool, setFontsBool] = useState(false);
-    const [shuffleBool, setShuffleBool] = useState(false);
     const [color, setColor] = useState(false);
-    const [imageOrder, setImageOrder] = useState([
-        exploremars,
-        mountainview,
-        designbox,
-        rainbow,
-        moderndesign,
-        donuts,
-        designconcept,
-        moderndesign3,
-        headphones,
-        poster,
-    ]);
 
     const handleNextSlide = () => {
-        if (currentSlide < 5) {
+        if (currentSlide < 4) {
             let copy = [...slideArray];
             copy[currentSlide] = "move-left";
             dispatch(replace(copy));
@@ -135,19 +123,6 @@ function App() {
         checkDirection();
     };
 
-    const randomize = () => {
-        setShuffleBool(true);
-        const shuffled = imageOrder
-            .map((value) => ({ value, sort: Math.random() }))
-            .sort((a, b) => a.sort - b.sort)
-            .map(({ value }) => value);
-
-        setImageOrder(shuffled);
-        setTimeout(() => {
-            setShuffleBool(false);
-        }, 1000);
-    };
-
     const handleKeyDown = (e) => {
         if (e.key === "ArrowRight") {
             handleNextSlide();
@@ -174,12 +149,8 @@ function App() {
             onKeyDown={handleKeyDown}
             tabIndex="0"
         >
+            {/* <Animation /> */}
             <WorkForYou />
-            <Developer
-                className={slideArray[4]}
-                imageOrder={imageOrder}
-                shuffleBool={shuffleBool}
-            />
             <Weather
                 className={slideArray[3]}
                 day={day}
@@ -219,7 +190,6 @@ function App() {
                 handleZipCode={handleZipCode}
                 day={day}
                 renderMessage={renderMessage}
-                randomize={randomize}
                 color={color}
                 handleClick={handleClick}
             />

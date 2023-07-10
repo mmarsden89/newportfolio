@@ -179,12 +179,6 @@ const Navigation = (props) => {
                 )}
 
                 {currentSlide === 4 && (
-                    <div className="nav-link randomize" onClick={randomize}>
-                        randomize
-                    </div>
-                )}
-
-                {currentSlide === 5 && (
                     <div className="nav-link social-container">
                         <a href="https://github.com/mmarsden89" target="_blank">
                             <img src={githubicon} className="github-icon" />

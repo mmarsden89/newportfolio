@@ -23,6 +23,7 @@ import designconcept from "./designconcept.png";
 import moderndesign3 from "./moderndesign3.png";
 import designboxanimated from "./designboxanimated.gif";
 import poster from "./poster.png";
+import rocket from "./rocket.png";
 
 export {
     airquality,
@@ -50,4 +51,5 @@ export {
     moderndesign3,
     designboxanimated,
     poster,
+    rocket,
 };

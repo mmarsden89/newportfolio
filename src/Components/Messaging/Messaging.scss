@@ -62,13 +62,9 @@
             // position: absolute;
             // top: 40%;
             // left: 35%;
-            animation: 0.25s onload linear;
+            animation: 0.5s onload linear;
             white-space: nowrap;
             // transition: 0.5s;
-
-            span {
-                mix-blend-mode: soft-light;
-            }
         }
         .sub-header {
             text-align: left;
@@ -225,5 +221,27 @@
                 }
             }
         }
+    }
+}
+
+.bnw {
+    .messaging {
+        h1 {
+            color: black;
+        }
+
+        .sub-header {
+            h2 {
+                color: black;
+            }
+        }
+    }
+    img {
+        filter: grayscale(1) !important;
+    }
+
+    .left,
+    .right {
+        filter: grayscale(1) invert(1);
     }
 }

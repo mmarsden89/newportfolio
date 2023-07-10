@@ -12,6 +12,7 @@ const Messaging = (props) => {
         renderMessage,
         primary,
         secondary,
+        color,
     } = props;
 
     // useEffect(() => {}, [currentSlide]);
@@ -23,7 +24,11 @@ const Messaging = (props) => {
     };
 
     return (
-        <div className={`messaging-container ${day ? " day" : " night"}`}>
+        <div
+            className={`messaging-container ${day ? " day" : " night"} ${
+                color && currentSlide === 1 ? "bnw" : ""
+            }`}
+        >
             <div className="messaging">
                 <h1 style={{ fontFamily: currentSlide === 2 && primary }}>
                     Hi! I'm Matt

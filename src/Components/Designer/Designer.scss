@@ -15,7 +15,13 @@
     text-align: left;
     width: 100vw;
     z-index: 98;
-    background: $orange;
+    // background: $orange;
+    background: white;
+
+    .change-color {
+        position: absolute;
+        bottom: 50px;
+    }
 
     div {
         display: grid;
@@ -576,5 +582,16 @@
 
     @media (max-width: 440px) {
         // display: none;
+    }
+}
+.bnw {
+    div {
+        div {
+            &::before,
+            &::after {
+                background: white !important;
+                border: 2px solid black;
+            }
+        }
     }
 }

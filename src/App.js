@@ -48,7 +48,7 @@ function App() {
     const [secondary, setSecondary] = useState("Sans serif");
     const [fontsBool, setFontsBool] = useState(false);
     const [shuffleBool, setShuffleBool] = useState(false);
-    const [scrollTimeStamp, setScrollTimeStamp] = useState(0);
+    const [color, setColor] = useState(false);
     const [imageOrder, setImageOrder] = useState([
         exploremars,
         mountainview,
@@ -156,6 +156,16 @@ function App() {
         }
     };
 
+    const handleClick = () => {
+        setColor(!color);
+    };
+
+    document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+            console.log("do something");
+        }
+    };
+
     return (
         <div
             className="App"
@@ -189,7 +199,11 @@ function App() {
                 displayFonts={displayFonts}
                 setFontsBool={setFontsBool}
             />
-            <Designer className={slideArray[1]} style={colorValue} />
+            <Designer
+                className={slideArray[1]}
+                style={colorValue}
+                color={color}
+            />
             <Welcome className={slideArray[0]} style={colorValue} />
             <Messaging
                 handleNextSlide={handleNextSlide}
@@ -198,6 +212,7 @@ function App() {
                 renderMessage={renderMessage}
                 primary={primary}
                 secondary={secondary}
+                color={color}
             />
             <Navigation
                 handleColorRange={handleColorRange}
@@ -205,6 +220,8 @@ function App() {
                 day={day}
                 renderMessage={renderMessage}
                 randomize={randomize}
+                color={color}
+                handleClick={handleClick}
             />
             <DisplayInfo
                 displayMessage={displayMessage}

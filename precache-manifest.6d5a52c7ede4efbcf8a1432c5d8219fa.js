@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "1b49966bae890f0f36a8",
-    "url": "/newportfolio/static/css/main.2db68633.chunk.css"
+    "revision": "6df29c86d2a026221d23",
+    "url": "/newportfolio/static/css/main.8dd24d89.chunk.css"
   },
   {
-    "revision": "1b49966bae890f0f36a8",
-    "url": "/newportfolio/static/js/main.09ab32d2.chunk.js"
+    "revision": "6df29c86d2a026221d23",
+    "url": "/newportfolio/static/js/main.df2cd466.chunk.js"
   },
   {
-    "revision": "d218e58ddb347be191bd",
-    "url": "/newportfolio/static/js/runtime~main.a4cd848d.js"
+    "revision": "1931e15b8f0ac7b353c3",
+    "url": "/newportfolio/static/js/runtime~main.e1b97615.js"
   },
   {
-    "revision": "ba90eec424972918f0da",
-    "url": "/newportfolio/static/js/2.05771413.chunk.js"
+    "revision": "faf46d26ad0e9dd801e2",
+    "url": "/newportfolio/static/js/2.88e18022.chunk.js"
   },
   {
-    "revision": "2f6110f28478fa8870ab",
-    "url": "/newportfolio/static/js/3.0c0dc788.chunk.js"
+    "revision": "287e6da43b9455cd561c",
+    "url": "/newportfolio/static/js/3.256b9730.chunk.js"
   },
   {
     "revision": "1c1a8d786b8d3573f4556c0252f1f5f6",
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/newportfolio/static/media/headphones.44920f46.png"
   },
   {
-    "revision": "12dfa91fcd39c88730fc1b2323215d13",
-    "url": "/newportfolio/static/media/mountainview.12dfa91f.png"
+    "revision": "57f918e648b92abf33caa8940095160a",
+    "url": "/newportfolio/static/media/mountainview.57f918e6.png"
   },
   {
     "revision": "0cb4a1a1ad8d8ce78a468b8934295fe1",
@@ -88,6 +88,14 @@ self.__precacheManifest = [
     "url": "/newportfolio/static/media/designboxanimated.bdcfcc1e.gif"
   },
   {
+    "revision": "2f99268222ff5de0d5e551743f79c96d",
+    "url": "/newportfolio/static/media/poster.2f992682.png"
+  },
+  {
+    "revision": "08884c75f8806a86e37e5960a2cb743c",
+    "url": "/newportfolio/static/media/rocket.08884c75.png"
+  },
+  {
     "revision": "3336426d6f7dd7a67a64184027ec16b0",
     "url": "/newportfolio/static/media/freebooter.3336426d.ttf"
   },
@@ -96,7 +104,7 @@ self.__precacheManifest = [
     "url": "/newportfolio/static/media/Augillion.d6b4e82f.otf"
   },
   {
-    "revision": "a49115133a6ad54608f64139bffc9d73",
+    "revision": "6683619404b97a9d63e892f9f755dcf9",
     "url": "/newportfolio/index.html"
   }
 ];

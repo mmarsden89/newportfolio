@@ -12,19 +12,6 @@ import {
     Customize,
     Animation,
 } from "./Components/_index";
-import Developer from "./Components/Developer/Developer";
-import {
-    exploremars,
-    mountainview,
-    designbox,
-    rainbow,
-    moderndesign,
-    donuts,
-    designconcept,
-    moderndesign3,
-    headphones,
-    poster,
-} from "./Assets/Images/_index";
 import { decrement, increment } from "./Redux/currentSlideSlice";
 import { replace } from "./Redux/slideArraySlice";
 import { replaceColorValue } from "./Redux/colorValueSlice";
@@ -149,7 +136,7 @@ function App() {
             onKeyDown={handleKeyDown}
             tabIndex="0"
         >
-            {/* <Animation /> */}
+            <Animation />
             <WorkForYou />
             <Weather
                 className={slideArray[3]}

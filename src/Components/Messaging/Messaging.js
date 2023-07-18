@@ -5,11 +5,12 @@ import { email, linkedinicon, codepen } from "../../Assets/Images/_index";
 import { useSelector } from "react-redux";
 
 const Messaging = (props) => {
-    const { handlePreviousSlide, handleNextSlide, day, renderMessage } = props;
+    const { handlePreviousSlide, handleNextSlide, renderMessage } = props;
     const { colorBool } = useSelector((state) => state.colorBool);
     const { currentSlide } = useSelector((state) => state.currentSlide);
     const { primaryFont } = useSelector((state) => state.primaryFont);
     const { secondaryFont } = useSelector((state) => state.secondaryFont);
+    const { day } = useSelector((state) => state.day);
 
     const handleClick = () => {
         navigator.clipboard.writeText("mattmarsdendev@gmail.com");

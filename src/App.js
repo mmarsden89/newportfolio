@@ -10,7 +10,6 @@ import {
     Weather,
     DisplayInfo,
     Customize,
-    Animation,
 } from "./Components/_index";
 import { decrement, increment } from "./Redux/currentSlideSlice";
 import { replace } from "./Redux/slideArraySlice";
@@ -102,7 +101,6 @@ function App() {
     };
 
     const touchStart = (e) => {
-        console.dir(e);
         touchstartX = e.changedTouches[0].screenX;
     };
 
@@ -123,12 +121,6 @@ function App() {
         dispatch(setColorBool(!colorBool));
     };
 
-    document.onreadystatechange = function () {
-        if (document.readyState === "complete") {
-            console.log("do something");
-        }
-    };
-
     return (
         <div
             className="App"
@@ -137,11 +129,9 @@ function App() {
             onKeyDown={handleKeyDown}
             tabIndex="0"
         >
-            {/* <Animation /> */}
             <WorkForYou />
             <Weather
                 className={slideArray[3]}
-                day={day}
                 setTheme={setTheme}
                 renderMessage={renderMessage}
             />
@@ -157,13 +147,11 @@ function App() {
             <Messaging
                 handleNextSlide={handleNextSlide}
                 handlePreviousSlide={handlePreviousSlide}
-                day={day}
                 renderMessage={renderMessage}
             />
             <Navigation
                 handleColorRange={handleColorRange}
                 handleZipCode={handleZipCode}
-                day={day}
                 renderMessage={renderMessage}
                 handleClick={handleClick}
             />

@@ -20,7 +20,8 @@ const Navigation = (props) => {
     const [editZip, setEditZip] = useState(false);
     const [newZip, setNewZip] = useState("");
     const { colorBool } = useSelector((state) => state.colorBool);
-    const { handleColorRange, handleZipCode, day, renderMessage, handleClick } =
+    const { day } = useSelector((state) => state.day);
+    const { handleColorRange, handleZipCode, renderMessage, handleClick } =
         props;
 
     useEffect(() => {}, [currentSlide]);

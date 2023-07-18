@@ -4,7 +4,7 @@ const slideOne = [
 ];
 
 const slideTwo = [
-    "a detail orientated designer who loves",
+    "a detail orientated engineer who loves",
     "designs that grab a user's attention",
 ];
 

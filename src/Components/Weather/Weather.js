@@ -19,8 +19,9 @@ import { setZipcode } from "../../Redux/zipcodeSlice";
 
 const Weather = (props) => {
     const dispatch = useDispatch();
-    const { className, setTheme, day, renderMessage } = props;
+    const { className, setTheme, renderMessage } = props;
     const { zipcode } = useSelector((state) => state.zipcode);
+    const { day } = useSelector((state) => state.day);
     const [weather, setWeather] = useState(dummyData);
     const [hourly, setHourly] = useState(
         dummyData.forecast.forecastday[0].hour

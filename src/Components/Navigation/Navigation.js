@@ -19,15 +19,9 @@ const Navigation = (props) => {
     const { colorRangeBool } = useSelector((state) => state.colorRangeBool);
     const [editZip, setEditZip] = useState(false);
     const [newZip, setNewZip] = useState("");
-    const {
-        handleColorRange,
-        handleZipCode,
-        day,
-        renderMessage,
-        randomize,
-        color,
-        handleClick,
-    } = props;
+    const { colorBool } = useSelector((state) => state.colorBool);
+    const { handleColorRange, handleZipCode, day, renderMessage, handleClick } =
+        props;
 
     useEffect(() => {}, [currentSlide]);
     const { currentSlide } = useSelector((state) => state.currentSlide);
@@ -63,7 +57,7 @@ const Navigation = (props) => {
     return (
         <div
             className={`navigation-container ${day ? " day" : " night"} ${
-                color && currentSlide === 1 ? "bnw" : ""
+                colorBool && currentSlide === 1 ? "bnw" : ""
             }`}
         >
             <div className="navigation-subcontainer">
@@ -91,8 +85,6 @@ const Navigation = (props) => {
                             onChange={(e) =>
                                 dispatch(replaceColorValue(e.target.value))
                             }
-                            // value={colorValue}
-                            // onChange={handleChange}
                             value={colorValue}
                         />
                         <div onClick={handleColorRange}>x</div>
@@ -100,7 +92,7 @@ const Navigation = (props) => {
                 )}
                 {currentSlide === 1 && (
                     <div className="nav-link" onClick={handleClick}>
-                        {color ? (
+                        {colorBool ? (
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-paint-filled"

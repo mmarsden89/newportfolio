@@ -17,6 +17,13 @@ import { replace } from "./Redux/slideArraySlice";
 import { replaceColorValue } from "./Redux/colorValueSlice";
 import { setColorRangeBool } from "./Redux/colorRangeBoolSlice";
 import { setZipcode } from "./Redux/zipcodeSlice";
+import { setDay } from "./Redux/daySlice";
+import { setDisplayMessage } from "./Redux/displayMessageSlice";
+import { setShowMessage } from "./Redux/showMessageSlice";
+import { setMsgBool } from "./Redux/msgBoolSlice";
+import { setToolbar } from "./Redux/toolbarSlice";
+import { setFontsBool } from "./Redux/fontsBoolSlice";
+import { setColorBool } from "./Redux/colorBoolSlice";
 
 function App() {
     const dispatch = useDispatch();
@@ -24,18 +31,13 @@ function App() {
     const { slideArray } = useSelector((state) => state.slideArray);
     const { colorValue } = useSelector((state) => state.colorValue);
     const { colorRangeBool } = useSelector((state) => state.colorRangeBool);
-    // const { zipcode } = useSelector((state) => state.zipcode);
-
-    // const [zip, setZip] = useState("02144");
-    const [day, setDay] = useState(false);
-    const [displayMessage, setDisplayMessage] = useState("");
-    const [showMessage, setShowMessage] = useState(false);
-    const [msgBool, setMsgBool] = useState(true);
-    const [toolbar, setToolbar] = useState(false);
-    const [primary, setPrimary] = useState("Augillion");
-    const [secondary, setSecondary] = useState("Sans serif");
-    const [fontsBool, setFontsBool] = useState(false);
-    const [color, setColor] = useState(false);
+    const { day } = useSelector((state) => state.day);
+    const { displayMessage } = useSelector((state) => state.displayMessage);
+    const { showMessage } = useSelector((state) => state.showMessage);
+    const { msgBool } = useSelector((state) => state.msgBool);
+    const { toolbar } = useSelector((state) => state.toolbar);
+    const { fontsBool } = useSelector((state) => state.fontsBool);
+    const { colorBool } = useSelector((state) => state.colorBool);
 
     const handleNextSlide = () => {
         if (currentSlide < 4) {
@@ -55,7 +57,6 @@ function App() {
             copy[currentSlide - 1] = "";
             dispatch(replace(copy));
             dispatch(decrement());
-            // dispatch(setColorRangeBool(false));
         }
     };
 
@@ -71,24 +72,24 @@ function App() {
     };
 
     const setTheme = () => {
-        setDay(!day);
+        dispatch(setDay(!day));
     };
 
     const renderMessage = (msg, good) => {
-        setShowMessage(true);
-        setDisplayMessage(msg);
-        setMsgBool(good ? true : false);
-        setTimeout(() => setShowMessage(false), 4000);
+        dispatch(setShowMessage(true));
+        dispatch(setDisplayMessage(msg));
+        dispatch(setMsgBool(good ? true : false));
+        setTimeout(() => dispatch(setShowMessage(false)), 4000);
     };
 
     const displayToolbar = () => {
         const toolBool = !toolbar;
-        setToolbar(toolBool);
-        !toolBool && setFontsBool(false);
+        dispatch(setToolbar(toolBool));
+        !toolBool && dispatch(setFontsBool(false));
     };
 
     const displayFonts = () => {
-        setFontsBool(!fontsBool);
+        dispatch(setFontsBool(!fontsBool));
     };
 
     let touchstartX = 0;
@@ -119,7 +120,7 @@ function App() {
     };
 
     const handleClick = () => {
-        setColor(!color);
+        dispatch(setColorBool(!colorBool));
     };
 
     document.onreadystatechange = function () {
@@ -136,7 +137,7 @@ function App() {
             onKeyDown={handleKeyDown}
             tabIndex="0"
         >
-            <Animation />
+            {/* <Animation /> */}
             <WorkForYou />
             <Weather
                 className={slideArray[3]}
@@ -149,35 +150,21 @@ function App() {
                 renderMessage={renderMessage}
                 toolbar={toolbar}
                 displayToolbar={displayToolbar}
-                setPrimary={setPrimary}
-                setSecondary={setSecondary}
-                primary={primary}
-                secondary={secondary}
-                fontsBool={fontsBool}
                 displayFonts={displayFonts}
-                setFontsBool={setFontsBool}
             />
-            <Designer
-                className={slideArray[1]}
-                style={colorValue}
-                color={color}
-            />
+            <Designer className={slideArray[1]} style={colorValue} />
             <Welcome className={slideArray[0]} style={colorValue} />
             <Messaging
                 handleNextSlide={handleNextSlide}
                 handlePreviousSlide={handlePreviousSlide}
                 day={day}
                 renderMessage={renderMessage}
-                primary={primary}
-                secondary={secondary}
-                color={color}
             />
             <Navigation
                 handleColorRange={handleColorRange}
                 handleZipCode={handleZipCode}
                 day={day}
                 renderMessage={renderMessage}
-                color={color}
                 handleClick={handleClick}
             />
             <DisplayInfo

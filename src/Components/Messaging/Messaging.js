@@ -5,18 +5,11 @@ import { email, linkedinicon, codepen } from "../../Assets/Images/_index";
 import { useSelector } from "react-redux";
 
 const Messaging = (props) => {
-    const {
-        handlePreviousSlide,
-        handleNextSlide,
-        day,
-        renderMessage,
-        primary,
-        secondary,
-        color,
-    } = props;
-
-    // useEffect(() => {}, [currentSlide]);
+    const { handlePreviousSlide, handleNextSlide, day, renderMessage } = props;
+    const { colorBool } = useSelector((state) => state.colorBool);
     const { currentSlide } = useSelector((state) => state.currentSlide);
+    const { primaryFont } = useSelector((state) => state.primaryFont);
+    const { secondaryFont } = useSelector((state) => state.secondaryFont);
 
     const handleClick = () => {
         navigator.clipboard.writeText("mattmarsdendev@gmail.com");
@@ -25,24 +18,28 @@ const Messaging = (props) => {
 
     return (
         <div
-            className={`messaging-container ${day ? " day" : " night"} ${
-                color && currentSlide === 1 ? "bnw" : ""
-            }`}
+            className={`messaging-container ${
+                day && currentSlide === 3 ? " day" : " night"
+            } ${colorBool && currentSlide === 1 ? "bnw" : ""}`}
         >
             <div className="messaging">
-                <h1 style={{ fontFamily: currentSlide === 2 && primary }}>
+                <h1 style={{ fontFamily: currentSlide === 2 && primaryFont }}>
                     Hi! I'm Matt
                 </h1>
                 <div className="sub-header">
                     <h2
                         key={currentSlide}
-                        style={{ fontFamily: currentSlide === 2 && secondary }}
+                        style={{
+                            fontFamily: currentSlide === 2 && secondaryFont,
+                        }}
                     >
                         {differentSlides[currentSlide][0]}
                     </h2>
                     <h2
                         key={currentSlide + "-two"}
-                        style={{ fontFamily: currentSlide === 2 && secondary }}
+                        style={{
+                            fontFamily: currentSlide === 2 && secondaryFont,
+                        }}
                     >
                         {differentSlides[currentSlide][1] || " "}
                     </h2>
@@ -59,7 +56,7 @@ const Messaging = (props) => {
                         <img src={codepen} className="" />
                     </a>
                 )}
-                {currentSlide === 5 && (
+                {currentSlide === 4 && (
                     <div className="contact">
                         <>
                             <img src={email} autoFocus onClick={handleClick} />
@@ -67,7 +64,7 @@ const Messaging = (props) => {
                         </>
                     </div>
                 )}
-                {currentSlide === 5 && (
+                {currentSlide === 4 && (
                     <div className="mobile-contact">
                         <>
                             <a href="mailto:mattmarsdendev@gmail.com">

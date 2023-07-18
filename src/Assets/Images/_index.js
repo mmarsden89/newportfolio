@@ -24,6 +24,12 @@ import moderndesign3 from "./moderndesign3.png";
 import designboxanimated from "./designboxanimated.gif";
 import poster from "./poster.png";
 import rocket from "./rocket.png";
+import spacebackground from "./spacebackground.png";
+import cloud from "./cloud.png";
+import window1 from "./window1.png";
+import window2 from "./window2.png";
+import window3 from "./window3.png";
+import window4 from "./window4.png";
 
 export {
     airquality,
@@ -52,4 +58,10 @@ export {
     designboxanimated,
     poster,
     rocket,
+    spacebackground,
+    cloud,
+    window1,
+    window2,
+    window3,
+    window4,
 };

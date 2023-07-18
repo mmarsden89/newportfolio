@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import "./Animation.scss";
-import { rocket } from "../../Assets/Images/_index";
+import {
+    rocket,
+    cloud,
+    window1,
+    window2,
+    window3,
+    window4,
+} from "../../Assets/Images/_index";
 
 const Animation = () => {
     const [runAnimation, setRunAnimation] = useState(false);
@@ -21,7 +28,25 @@ const Animation = () => {
                     <h2>I'm Matt</h2>
                 </div>
             </div>
-            {/* <img src={rocket} className="rocket" /> */}
+            <div className="variety">
+                <p>I have experience working on a variety of projects</p>
+                <div className="windows">
+                    <img src={window1} className="window" />
+                    <img src={window2} className="window" />
+                    <img src={window4} className="window" />
+                </div>
+            </div>
+            <div className="space-background">
+                <div className="space-text-wrapper">
+                    <p>and I like to build things for the web</p>
+                </div>
+                <img src={rocket} className="rocket" />
+                <img src={cloud} className="cloud" />
+            </div>
+            <div className="work">
+                <div className="work-background"></div>
+                <p>and I want to work with you</p>
+            </div>
         </div>
     );
 };

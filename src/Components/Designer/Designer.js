@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "./Designer.scss";
 
 const Designer = (props) => {
-    const { className, style, color } = props;
+    const { className, style } = props;
+    const { colorBool } = useSelector((state) => state.colorBool);
 
     const rotate = (e) => {
         const div = e.target;
@@ -16,7 +18,9 @@ const Designer = (props) => {
 
     return (
         <div
-            className={`designer-container ${className} ${color ? "bnw" : ""}`}
+            className={`designer-container ${className} ${
+                colorBool ? "bnw" : ""
+            }`}
             style={{ filter: `hue-rotate(${style}deg)` }}
         >
             <div>

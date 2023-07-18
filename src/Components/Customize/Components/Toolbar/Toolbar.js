@@ -19,13 +19,9 @@ const ToolBar = (props) => {
         copyColors,
         returnDefaults,
         displayToolbar,
-        setPrimary,
         setSecondary,
-        primary,
         secondary,
-        fontsBool,
         displayFonts,
-        setFontsBool,
     } = props;
 
     return (
@@ -63,13 +59,9 @@ const ToolBar = (props) => {
             <Randomize randomize={randomize} />
             <CopyColors copyColors={copyColors} />
             <Typography
-                setPrimary={setPrimary}
                 setSecondary={setSecondary}
-                primary={primary}
                 secondary={secondary}
-                fontsBool={fontsBool}
                 displayFonts={displayFonts}
-                setFontsBool={setFontsBool}
             />
             <Home returnDefaults={returnDefaults} />
             <div onClick={displayToolbar} className="cancel">

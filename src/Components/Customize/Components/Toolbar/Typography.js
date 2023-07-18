@@ -1,22 +1,22 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import fontList from "./FontList";
+import { setPrimaryFont } from "../../../../Redux/primaryFontSlice";
+import { setSecondaryFont } from "../../../../Redux/secondaryFontSlice";
+import { setFontsBool } from "../../../../Redux/fontsBoolSlice";
 
 const Typography = (props) => {
-    const {
-        setPrimary,
-        setSecondary,
-        primary,
-        secondary,
-        fontsBool,
-        displayFonts,
-        setFontsBool,
-    } = props;
+    const dispatch = useDispatch();
+    const { displayFonts } = props;
+    const { primaryFont } = useSelector((state) => state.primaryFont);
+    const { secondaryFont } = useSelector((state) => state.secondaryFont);
+    const { fontsBool } = useSelector((state) => state.fontsBool);
 
-    const setPrimaryFont = (e) => {
-        setPrimary(e.target.value);
+    const changePrimaryFont = (e) => {
+        dispatch(setPrimaryFont(e.target.value));
     };
-    const setSecondaryFont = (e) => {
-        setSecondary(e.target.value);
+    const changeSecondaryFont = (e) => {
+        dispatch(setSecondaryFont(e.target.value));
     };
     return (
         <div className="typography-container">
@@ -52,7 +52,7 @@ const Typography = (props) => {
                     fill="none"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    onClick={() => setFontsBool(false)}
+                    onClick={() => dispatch(setFontsBool(false))}
                     className={`font-cancel ${
                         fontsBool ? "rotate-out" : "rotate-in"
                     }`}
@@ -69,15 +69,19 @@ const Typography = (props) => {
                 }`}
             >
                 <label for="primary">Primary</label>
-                <select onChange={setPrimaryFont} value={primary} id="primary">
+                <select
+                    onChange={changePrimaryFont}
+                    value={primaryFont}
+                    id="primary"
+                >
                     {fontList.map((font) => (
                         <option value={font.value}>{font.name}</option>
                     ))}
                 </select>
                 <label for="secondary">Secondary</label>
                 <select
-                    onChange={setSecondaryFont}
-                    value={secondary}
+                    onChange={changeSecondaryFont}
+                    value={secondaryFont}
                     id="secondary"
                 >
                     {fontList.map((font) => (

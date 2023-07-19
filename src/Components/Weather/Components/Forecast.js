@@ -10,7 +10,11 @@ const Forecast = (props) => {
         weather.forecast.forecastday.slice(0, 5).map((item) => (
             <div className="weather-day-container">
                 <div>{days[new Date(item.date).getDay() + 1] || days[0]}</div>
-                <img src={item.day.condition.icon} className="forecast-image" />
+                <img
+                    src={item.day.condition.icon}
+                    className="forecast-image"
+                    alt="forecast icon"
+                />
                 <div>{Math.round(item.day.mintemp_f)}°F</div>
                 <div className="min-max-container">
                     <div

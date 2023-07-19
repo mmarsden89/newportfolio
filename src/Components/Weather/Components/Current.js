@@ -12,6 +12,7 @@ const Current = (props) => {
                                 weather.current.condition.icon) ||
                             null
                         }
+                        alt="current condition"
                     />
                     <p>{weather.current && weather.current.condition.text}</p>
                 </div>

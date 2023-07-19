@@ -15,7 +15,11 @@ const AirQuality = (props) => {
         <div className="icon air-quality">
             <div className="air-quality-container">
                 <div>
-                    <img src={airquality} className="air-quality-img" />
+                    <img
+                        src={airquality}
+                        className="air-quality-img"
+                        alt="air quality icon"
+                    />
                     <p style={{ margin: 0 }}>
                         {weather.forecast &&
                             aqi[
@@ -26,7 +30,7 @@ const AirQuality = (props) => {
                     </p>
                 </div>
                 <div>
-                    <img src={co} className="co-img" />
+                    <img src={co} className="co-img" alt="co icon" />
                     <p style={{ margin: 0 }}>
                         {`${Math.round(
                             weather.forecast &&

@@ -15,7 +15,11 @@ const Hourly = (props) => {
                 <p className="hourly-text">
                     {new Date(item.time).toLocaleString("en-US", options)}
                 </p>
-                <img src={item.condition.icon} className="forecast-image" />
+                <img
+                    src={item.condition.icon}
+                    className="forecast-image"
+                    alt="hourly weather icon"
+                />
                 <p className="hourly-text">{item.temp_f}°F</p>
             </div>
         ));

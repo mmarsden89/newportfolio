@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ColorPicker, Randomize, CopyColors, Home, Typography } from "./_index";
 
 const ToolBar = (props) => {

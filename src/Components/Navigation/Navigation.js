@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Navigation.scss";
 import {
     colorwheelicon,
@@ -24,7 +24,6 @@ const Navigation = (props) => {
     const { handleColorRange, handleZipCode, renderMessage, handleClick } =
         props;
 
-    useEffect(() => {}, [currentSlide]);
     const { currentSlide } = useSelector((state) => state.currentSlide);
 
     const handleHome = () => {
@@ -74,6 +73,7 @@ const Navigation = (props) => {
                             src={colorwheelicon}
                             className="colorwheel"
                             onClick={handleColorRange}
+                            alt="colorwheel icon"
                         />
                     </div>
                 )}
@@ -173,11 +173,27 @@ const Navigation = (props) => {
 
                 {currentSlide === 4 && (
                     <div className="nav-link social-container">
-                        <a href="https://github.com/mmarsden89" target="_blank">
-                            <img src={githubicon} className="github-icon" />
+                        <a
+                            href="https://github.com/mmarsden89"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src={githubicon}
+                                className="github-icon"
+                                alt="github icon"
+                            />
                         </a>
-                        <a href="#" target="_blank">
-                            <img src={linkedinicon} className="github-icon" />
+                        <a
+                            href="https://www.linkedin.com/in/matthewjmarsden"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src={linkedinicon}
+                                className="github-icon"
+                                alt="github icon"
+                            />
                         </a>
                         <Instagram renderMessage={renderMessage} />
                     </div>

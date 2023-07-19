@@ -3,7 +3,6 @@ import React from "react";
 const Astro = (props) => {
     const { weather } = props;
     const astro = weather.forecast && weather.forecast.forecastday[0].astro;
-    const date = new Date();
 
     const getHours = () => {
         const morning =
@@ -36,14 +35,20 @@ const Astro = (props) => {
         <div className="icon astro">
             <div className="astro-container">
                 <div className="sunrise">
-                    <img src="http://cdn.weatherapi.com/weather/64x64/day/113.png" />
+                    <img
+                        src="http://cdn.weatherapi.com/weather/64x64/day/113.png"
+                        alt="day icon"
+                    />
                     {astro && astro.sunrise}
                 </div>
                 <div className="hours-of-daylight">
                     {getHours()} hours <pre>••••••••••••••</pre>
                 </div>
                 <div className="sunset">
-                    <img src="http://cdn.weatherapi.com/weather/64x64/night/113.png" />
+                    <img
+                        src="http://cdn.weatherapi.com/weather/64x64/night/113.png"
+                        alt="night icon"
+                    />
                     {astro && astro.sunset}
                 </div>
             </div>

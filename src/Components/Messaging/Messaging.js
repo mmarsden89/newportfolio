@@ -3,6 +3,8 @@ import differentSlides from "./Slides";
 import "./Messaging.scss";
 import { email, linkedinicon, codepen } from "../../Assets/Images/_index";
 import { useSelector } from "react-redux";
+import CaretRight from "./CaretRight";
+import CaretLeft from "./CaretLeft";
 
 const Messaging = (props) => {
     const { handlePreviousSlide, handleNextSlide, renderMessage } = props;
@@ -53,75 +55,53 @@ const Messaging = (props) => {
                         href="https://codepen.io/mmarsden89-the-scripter"
                         target="_blank"
                         className="codepen"
+                        rel="noopener noreferrer"
                     >
-                        <img src={codepen} className="" />
+                        <img src={codepen} alt="codepen logo" />
                     </a>
                 )}
                 {currentSlide === 4 && (
-                    <div className="contact">
-                        <>
-                            <img src={email} autoFocus onClick={handleClick} />
-                            <img src={linkedinicon} autoFocus />
-                        </>
-                    </div>
-                )}
-                {currentSlide === 4 && (
-                    <div className="mobile-contact">
-                        <>
-                            <a href="mailto:mattmarsdendev@gmail.com">
-                                <img src={email} autoFocus />
-                            </a>
-                            <img src={linkedinicon} autoFocus />
-                        </>
-                    </div>
+                    <>
+                        <div className="contact">
+                            <>
+                                <img
+                                    src={email}
+                                    autoFocus
+                                    onClick={handleClick}
+                                    alt="email icon"
+                                />
+                                <img
+                                    src={linkedinicon}
+                                    autoFocus
+                                    alt="linkedin icon"
+                                />
+                            </>
+                        </div>
+                        <div className="mobile-contact">
+                            <>
+                                <a href="mailto:mattmarsdendev@gmail.com">
+                                    <img
+                                        src={email}
+                                        autoFocus
+                                        alt="email icon"
+                                    />
+                                </a>
+                                <img
+                                    src={linkedinicon}
+                                    autoFocus
+                                    alt="linkedin icon"
+                                />
+                            </>
+                        </div>
+                    </>
                 )}
             </div>
             <div className="wayfinder-container">
                 {currentSlide > 0 && (
-                    <div onClick={handlePreviousSlide} className="left">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-tabler icon-tabler-caret-left"
-                            width="75"
-                            height="75"
-                            viewBox="0 0 24 24"
-                            stroke-width="2"
-                            stroke="currentColor"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path
-                                stroke="none"
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                            ></path>
-                            <path d="M14 6l-6 6l6 6v-12"></path>
-                        </svg>
-                    </div>
+                    <CaretLeft handlePreviousSlide={handlePreviousSlide} />
                 )}
                 {currentSlide < 4 && (
-                    <div onClick={handleNextSlide} className="right">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-tabler icon-tabler-caret-right"
-                            width="75"
-                            height="75"
-                            viewBox="0 0 24 24"
-                            stroke-width="2"
-                            stroke="currentColor"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path
-                                stroke="none"
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                            ></path>
-                            <path d="M10 18l6 -6l-6 -6v12"></path>
-                        </svg>
-                    </div>
+                    <CaretRight handleNextSlide={handleNextSlide} />
                 )}
             </div>
         </div>

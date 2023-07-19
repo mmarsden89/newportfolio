@@ -8,9 +8,9 @@ const Theme = (props) => {
     return (
         <div className="theme-container">
             {day ? (
-                <img src={night} onClick={setTheme} />
+                <img src={night} onClick={setTheme} alt="night icon" />
             ) : (
-                <img src={sun} onClick={setTheme} />
+                <img src={sun} onClick={setTheme} alt="day icon" />
             )}
         </div>
     );

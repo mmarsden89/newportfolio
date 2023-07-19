@@ -6,7 +6,6 @@ import Welcome from "./Welcome/Welcome";
 import WorkForYou from "./WorkForYou/WorkForYou";
 import DisplayInfo from "./DisplayInfo/DisplayInfo";
 import Customize from "./Customize/Customize";
-import Animation from "./Animation/Animation";
 
 export {
     Designer,
@@ -17,5 +16,4 @@ export {
     WorkForYou,
     DisplayInfo,
     Customize,
-    Animation,
 };

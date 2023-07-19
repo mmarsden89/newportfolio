@@ -61,6 +61,7 @@ const Instagram = (props) => {
                 onMouseOver={handleClick}
                 onClick={handleCounter}
                 onMouseEnter={handleClick}
+                alt="instagram icon"
             />
         </div>
     );

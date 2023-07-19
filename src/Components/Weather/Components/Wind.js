@@ -13,7 +13,7 @@ const Wind = (props) => {
                     }deg)`,
                 }}
             >
-                <img src={wind} />
+                <img src={wind} alt="wind icon" />
             </div>
             <div>
                 {weather.current &&

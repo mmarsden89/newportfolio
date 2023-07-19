@@ -20,7 +20,11 @@ const ColorPicker = (props) => {
             >
                 {color}
             </label>
-            <label for={className} onClick={handleLabelClick} id={className}>
+            <label
+                for={className}
+                onClick={handleLabelClick}
+                id={className + "-two"}
+            >
                 {className}
             </label>
         </div>

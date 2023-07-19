@@ -67,7 +67,7 @@ const Customize = (props) => {
         setBackgroundColor("#0e0c0e");
         setPrimaryColor("#211c21");
         setSecondaryColor("#f3bd05");
-        setAccentColor("#707070");
+        setAccentColor("#cccccc");
         setTextColor("#e6dc75");
         dispatch(setPrimaryFont("Augillion"));
         dispatch(setSecondaryFont("Sans serif"));

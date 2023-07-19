@@ -16,14 +16,14 @@ const ColorPicker = (props) => {
                 for={className}
                 className="hex"
                 onClick={handleLabelClick}
-                id={className}
+                id={className + "-label"}
             >
                 {color}
             </label>
             <label
-                for={className + "-two"}
+                for={className}
                 onClick={handleLabelClick}
-                id={className + "-two"}
+                id={className + "label-two"}
             >
                 {className}
             </label>

@@ -70,11 +70,17 @@ const Messaging = (props) => {
                                     onClick={handleClick}
                                     alt="email icon"
                                 />
-                                <img
-                                    src={linkedinicon}
-                                    autoFocus
-                                    alt="linkedin icon"
-                                />
+                                <a
+                                    href="https://www.linkedin.com/in/matthewjmarsden"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        src={linkedinicon}
+                                        autoFocus
+                                        alt="linkedin icon"
+                                    />
+                                </a>
                             </>
                         </div>
                         <div className="mobile-contact">
@@ -86,11 +92,17 @@ const Messaging = (props) => {
                                         alt="email icon"
                                     />
                                 </a>
-                                <img
-                                    src={linkedinicon}
-                                    autoFocus
-                                    alt="linkedin icon"
-                                />
+                                <a
+                                    href="https://www.linkedin.com/in/matthewjmarsden"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        src={linkedinicon}
+                                        autoFocus
+                                        alt="linkedin icon"
+                                    />
+                                </a>
                             </>
                         </div>
                     </>

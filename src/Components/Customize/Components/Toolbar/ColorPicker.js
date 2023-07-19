@@ -12,10 +12,15 @@ const ColorPicker = (props) => {
                 style={{ background: color }}
                 value={color}
             />
-            <label for={className} className="hex" onClick={handleLabelClick}>
+            <label
+                for={className}
+                className="hex"
+                onClick={handleLabelClick}
+                id={className}
+            >
                 {color}
             </label>
-            <label for={className} onClick={handleLabelClick}>
+            <label for={className} onClick={handleLabelClick} id={className}>
                 {className}
             </label>
         </div>

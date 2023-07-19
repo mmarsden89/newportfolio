@@ -20,7 +20,7 @@ const Customize = (props) => {
     const [backgroundColor, setBackgroundColor] = useState("#0e0c0e");
     const [primaryColor, setPrimaryColor] = useState("#211c21");
     const [secondaryColor, setSecondaryColor] = useState("#f3bd05");
-    const [accentColor, setAccentColor] = useState("#707070");
+    const [accentColor, setAccentColor] = useState("#cccccc");
     const [textColor, setTextColor] = useState("#e6dc75");
 
     const handleChange = (e) => {

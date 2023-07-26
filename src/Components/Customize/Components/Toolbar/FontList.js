@@ -8,7 +8,7 @@ const fontList = [
     { name: "Helvetica", value: "Helvetica, sans-serif" },
     { name: "Impact", value: "Impact, fantasy" },
     { name: "Palatino", value: "Palatino, URW Palladio L, serif" },
-    { name: "Sans serif", value: "sans-serif" },
+    { name: "Sans-serif", value: "sans-serif" },
     { name: "Times New Roman", value: "Times, Times New Roman, serif" },
     { name: "Trebuchet", value: "Trebuchet MS, sans-serif" },
     { name: "Verdana", value: "Verdana, sans-serif" },

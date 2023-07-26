@@ -191,6 +191,11 @@
     @media (max-width: 440px) {
         .messaging {
             top: 37%;
+            .sub-header {
+                h2 {
+                    animation: none;
+                }
+            }
         }
         // display: none;
         .mobile-swipe {

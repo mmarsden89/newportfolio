@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    secondaryFont: "Sans serif",
+    secondaryFont: "Sans-serif",
 };
 
 export const secondaryFontSlice = createSlice({

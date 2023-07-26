@@ -11,20 +11,16 @@ const ColorPicker = (props) => {
                 onChange={handleColorChange}
                 style={{ background: color }}
                 value={color}
+                id={className + "-label"}
             />
             <label
-                for={className}
+                for={className + "-label"}
                 className="hex"
                 onClick={handleLabelClick}
-                id={className + "-label"}
             >
                 {color}
             </label>
-            <label
-                for={className}
-                onClick={handleLabelClick}
-                id={className + "label-two"}
-            >
+            <label for={className + "-label"} onClick={handleLabelClick}>
                 {className}
             </label>
         </div>

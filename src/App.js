@@ -11,18 +11,21 @@ import {
     DisplayInfo,
     Customize,
 } from "./Components/_index";
-import { decrement, increment } from "./Redux/currentSlideSlice";
-import { replace } from "./Redux/slideArraySlice";
-import { replaceColorValue } from "./Redux/colorValueSlice";
-import { setColorRangeBool } from "./Redux/colorRangeBoolSlice";
-import { setZipcode } from "./Redux/zipcodeSlice";
-import { setDay } from "./Redux/daySlice";
-import { setDisplayMessage } from "./Redux/displayMessageSlice";
-import { setShowMessage } from "./Redux/showMessageSlice";
-import { setMsgBool } from "./Redux/msgBoolSlice";
-import { setToolbar } from "./Redux/toolbarSlice";
-import { setFontsBool } from "./Redux/fontsBoolSlice";
-import { setColorBool } from "./Redux/colorBoolSlice";
+import {
+    decrement,
+    increment,
+    replace,
+    replaceColorValue,
+    setColorRangeBool,
+    setZipcode,
+    setDay,
+    setDisplayMessage,
+    setMsgBool,
+    setToolbar,
+    setFontsBool,
+    setColorBool,
+    setShowMessage,
+} from "./Redux/index";
 
 function App() {
     const dispatch = useDispatch();

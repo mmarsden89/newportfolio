@@ -1,5 +1,5 @@
 {
-  "main.css": "/newportfolio/static/css/main.f3b34a40.chunk.css",
+  "main.css": "/newportfolio/static/css/main.4e4cb85f.chunk.css",
   "main.js": "/newportfolio/static/js/main.6737296c.chunk.js",
   "main.js.map": "/newportfolio/static/js/main.6737296c.chunk.js.map",
   "runtime~main.js": "/newportfolio/static/js/runtime~main.a74ffdcd.js",
@@ -9,9 +9,9 @@
   "static/js/3.57b001d4.chunk.js": "/newportfolio/static/js/3.57b001d4.chunk.js",
   "static/js/3.57b001d4.chunk.js.map": "/newportfolio/static/js/3.57b001d4.chunk.js.map",
   "index.html": "/newportfolio/index.html",
-  "precache-manifest.9dd32e1354523a56e7f2c29eb29c8a11.js": "/newportfolio/precache-manifest.9dd32e1354523a56e7f2c29eb29c8a11.js",
+  "precache-manifest.b916613589234e03d8efc5d5fbf4f420.js": "/newportfolio/precache-manifest.b916613589234e03d8efc5d5fbf4f420.js",
   "service-worker.js": "/newportfolio/service-worker.js",
-  "static/css/main.f3b34a40.chunk.css.map": "/newportfolio/static/css/main.f3b34a40.chunk.css.map",
+  "static/css/main.4e4cb85f.chunk.css.map": "/newportfolio/static/css/main.4e4cb85f.chunk.css.map",
   "static/media/Welcome.scss": "/newportfolio/static/media/Augillion.d6b4e82f.otf",
   "static/media/colorwheelicon.png": "/newportfolio/static/media/colorwheelicon.326f9802.png",
   "static/media/Weather.scss": "/newportfolio/static/media/freebooter.3336426d.ttf",
